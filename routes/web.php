@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 //    return view('welcome');
     return view('dashboard');
-});
+})->name('dashboard');
 
 Route::group(['prefix'=>'user'],function(){
     Route::get('/register',[\App\Http\Controllers\RegisterController::class,'create'])->name('regsCreate');
@@ -25,4 +25,7 @@ Route::group(['prefix'=>'user'],function(){
     Route::get('/login',[\App\Http\Controllers\SessionController::class,'create'])->name('sessCreate');
     Route::post('/login',[\App\Http\Controllers\SessionController::class,'store'])->name('sessStore');
     Route::get('/logout',[\App\Http\Controllers\SessionController::class,'destroy'])->name('sessDestroy');
+
+    Route::get('/',[\App\Http\Controllers\ProfileController::class,'views'])->name('profView');
+    Route::post('/',[\App\Http\Controllers\ProfileController::class,'update'])->name('profUpdate');
 });
