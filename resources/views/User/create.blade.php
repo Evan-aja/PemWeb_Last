@@ -17,11 +17,6 @@
     </div>
 
     <div class="form-group">
-        <label for="telepon">Telepon:</label>
-        <input type="text" class="form-control" id="telepon" name="telepon">
-    </div>
-
-    <div class="form-group">
         <label for="nik">NIK:</label>
         <input type="text" class="form-control" id="nik" name="nik">
     </div>
@@ -32,6 +27,11 @@
     </div>
 
     <div class="form-group">
+        <label for="telepon">Telepon:</label>
+        <input type="text" class="form-control" id="telepon" name="telepon">
+    </div>
+
+    <div class="form-group">
         <label for="password">Password:</label>
         <input type="password" class="form-control" id="password" name="password">
     </div>
@@ -39,16 +39,7 @@
     <div class="form-group">
         <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
     </div>
-    {{--        @include('partials.formerrors')--}}
 </form>
 
 </body>
 </html>
-{{--@extends('layouts.master')--}}
-
-{{--@section('content')--}}
-
-
-{{--@endsection--}}
-
-
