@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    @include('Partials.navbar')
 <h2>Register</h2>
 <form method="POST" action="{{ route('regsStore') }}">
     {{ csrf_field() }}

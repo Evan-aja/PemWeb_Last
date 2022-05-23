@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    @include('Partials.navbar')
 <h2>Log In</h2>
 
 <form method="POST" action="{{route('sessStore')}}">
