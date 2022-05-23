@@ -11,7 +11,7 @@
     <link href="{{asset('css/login.css')}}" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    {{-- @include('Partials.navbar') --}}
+    <!-- @include('Partials.navbar') -->
 <div class="row">
     <div class="col s12 m12 l6">
       <div class="masuk_text">
