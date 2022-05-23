@@ -1,0 +1,42 @@
+.label{
+    padding-right: 2vw;
+}
+
+.inputProfile
+{    
+    font-family: 'Nunito', sans-serif;
+    border: 2px solid #7969E8 ;
+    width: 20vw ;
+    height: 5vh  ;
+    box-sizing: border-box ;
+    border-radius: 6.5px ;
+    outline: none ;
+    padding: 10px 10px 10px 10px  ;
+}
+
+.input{
+    font-family: 'Nunito', sans-serif;
+}
+
+input{
+    font-size: 16px;
+}
+
+input:focus{
+    outline: 0;
+}
+
+.profil{
+    margin-left: 8.3vw;
+    width: 10vw;
+}
+
+h1{
+    color: #7969E8;
+    margin-bottom: 5vh;
+    
+}
+
+.masuk_text{
+    top: 9vh;
+}
