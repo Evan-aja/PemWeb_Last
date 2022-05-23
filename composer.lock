@@ -5452,6 +5452,13 @@
                 "docker",
                 "laravel"
             ],
+<<<<<<< HEAD
+            "support": {
+                "issues": "https://github.com/laravel/sail/issues",
+                "source": "https://github.com/laravel/sail"
+            },
+=======
+>>>>>>> 86d6e6faacb490c8f6def72faccc6e79a87c5fd1
             "time": "2022-05-18T15:56:59+00:00"
         },
         {

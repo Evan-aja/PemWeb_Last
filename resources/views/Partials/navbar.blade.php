@@ -17,7 +17,7 @@
                 <a class='c' href="{{route('dashboard')}}">Mobil<span class='red'>Malang</span></a>
                 </span>
                 <span class='nav-others'>
-                        <a class='a' href="{{route('dashboard')}}">Profil</a>
+                        <a class='a' href="{{route('profView')}}">Profil</a>
                         <a class='b' href="{{route('dashboard')}}">Riwayat</a>
                 </span>
                 <a  href = "{{route('sessDestroy')}}" class='keluar'>Keluar</a >
