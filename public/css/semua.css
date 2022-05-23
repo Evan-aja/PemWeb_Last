@@ -1,8 +1,8 @@
 *{
     font-family: 'Nunito', sans-serif;
-    margin: 0 !important;
-    border: 0 !important;
-    padding: 0 !important;
+    margin: 0 ;
+    border: 0 ;
+    padding: 0 ;
 }
 
 .image_alun{
@@ -18,58 +18,55 @@
     text-align: center;
     position: relative;
     top: 10%;
-    /* font-size: 18px !important; */
+    /* font-size: 18px ; */
 }
 
 .masuk_text{
-    position: relative;
-    top: 25vh;
-    left: 9vh;
+    /* position: relative; */
+    /* top: 25vh; */
+    margin-left: 9vh;
+    /* background-color: #3e549a; */
 }
 
 .image_text h5{
-    padding-top: 8px !important;
-    font-size: 30px !important;
+    padding-top: 8px ;
+    font-size: 30px ;
 }
 
 .image_text h3{
-    /* padding-top: 8px !important; */
-    font-size: 40px !important;
+    /* padding-top: 8px ; */
+    font-size: 40px ;
 }
 
 
-.masuk_text h3{
-    color: #6354C8;
-    margin-bottom: 25px !important;
-}
 
 .input
 {    
-    margin-top: 15px !important;
+    margin-top: 15px ;
     font-family: 'Lexend', sans-serif;
-    border: 2px solid #7969E8 !important;
-    width: 20vw !important;
-    height: 40px  !important;
-    box-sizing: border-box !important;
-    border-radius: 6.5px !important;
+    border: 2px solid #7969E8 ;
+    width: 20vw ;
+    height: 40px  ;
+    box-sizing: border-box ;
+    border-radius: 6.5px ;
     outline: none;
-    padding: 10px 10px 10px 10px !important;
+    padding: 10px 10px 10px 10px ;
 }
 
 .tombolsubmit{
-    margin-top: 15px !important;
+    margin-top: 15px ;
     font-family: 'Lexend', sans-serif;
-    border: 2px solid #7969E8 !important;
-    width: 20vw !important;
-    height: 40px  !important;
-    box-sizing: border-box !important;
-    border-radius: 6.5px !important;
+    border: 2px solid #7969E8 ;
+    width: 20vw ;
+    height: 40px  ;
+    box-sizing: border-box ;
+    border-radius: 6.5px ;
     outline: none;
-    padding: 10px 10px 10px 10px !important;
-    margin-top: 15px !important;
+    padding: 10px 10px 10px 10px ;
+    margin-top: 15px ;
     background-color: #8B7FDF;
     color: white;
-    margin-bottom: 10px!important;
+    margin-bottom: 10px;
 }
 
 a{
@@ -78,37 +75,37 @@ a{
 }
 
 .swal-overlay {
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.5) ;
   }
 
 
 .swal-title {
-    padding-top: 10px!important;
-    padding-bottom: 10px!important;
+    padding-top: 10px;
+    padding-bottom: 10px;
     color: red;
-    margin: 0px !important;
-    font-size: 16px !important;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21) !important;
-    margin-bottom: 28px !important;
+    margin: 0px ;
+    font-size: 16px ;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21) ;
+    margin-bottom: 28px ;
 }
 
 .swal-button {
-position: relative !important;
-margin-right: 15px !important;
-margin-bottom: 10px !important;
-padding: 7px 19px !important;
-border-radius: 5px !important;
-background-color: #4962B3 !important;
-font-size: 12px !important;
-border: 1px solid #3e549a !important;
-text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3) !important;
+position: relative ;
+margin-right: 15px ;
+margin-bottom: 10px ;
+padding: 7px 19px ;
+border-radius: 5px ;
+background-color: #4962B3 ;
+font-size: 12px ;
+border: 1px solid #3e549a ;
+text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3) ;
 }
 
 *{
     font-family: 'Nunito', sans-serif;
-    margin: 0 !important;
-    border: 0 !important;
-    padding: 0 !important;
+    margin: 0 ;
+    border: 0 ;
+    padding: 0 ;
 }
 
 .image_alun{
@@ -124,58 +121,53 @@ text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3) !important;
     text-align: center;
     position: relative;
     top: 10%;
-    /* font-size: 18px !important; */
+    /* font-size: 18px ; */
 }
 
-.masuk_text{
-    position: relative;
-    top: 25vh;
-    left: 9vh;
-}
 
 .image_text h5{
-    padding-top: 8px !important;
-    font-size: 30px !important;
+    padding-top: 8px ;
+    font-size: 30px ;
 }
 
 .image_text h3{
-    /* padding-top: 8px !important; */
-    font-size: 40px !important;
+    /* padding-top: 8px ; */
+    font-size: 40px ;
 }
 
 
 .masuk_text h3{
     color: #6354C8;
-    margin-bottom: 25px !important;
+    margin-bottom: 25px ;
 }
 
 .input
 {    
-    margin-top: 15px !important;
-    font-family: 'Lexend', sans-serif;
+    margin-top: 15px  !important;
+    font-family: 'Lexend', sans-serif !important;
     border: 2px solid #7969E8 !important;
     width: 20vw !important;
     height: 40px  !important;
     box-sizing: border-box !important;
     border-radius: 6.5px !important;
-    outline: none;
-    padding: 10px 10px 10px 10px !important;
+    outline: none !important;
+    padding: 10px 10px 10px 10px  !important;
 }
 
 .tombolsubmit{
     margin-top: 15px !important;
     font-family: 'Lexend', sans-serif;
-    border: 2px solid #7969E8 !important;
-    width: 20vw !important;
-    height: 40px  !important;
-    box-sizing: border-box !important;
-    border-radius: 6.5px !important;
+    border: 2px solid #7969E8 ;
+    width: 20vw ;
+    height: 40px  ;
+    box-sizing: border-box ;
+    border-radius: 6.5px ;
     outline: none;
-    padding: 10px 10px 10px 10px !important;
-    margin-top: 15px !important;
+    padding: 10px 10px 10px 10px ;
+    margin-top: 15px ;
     background-color: #8B7FDF;
     color: white;
-    margin-bottom: 10px!important;
+    margin-bottom: 10px;
 }
 
 a{
@@ -184,41 +176,41 @@ a{
 }
 
 .swal-overlay {
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.5) ;
   }
 
 
 .swal-title {
-    padding-top: 10px!important;
-    padding-bottom: 10px!important;
+    padding-top: 10px;
+    padding-bottom: 10px;
     color: red;
-    margin: 0px !important;
-    font-size: 16px !important;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21) !important;
-    margin-bottom: 28px !important;
+    margin: 0px ;
+    font-size: 16px ;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21) ;
+    margin-bottom: 28px ;
 }
 
 .swal-button {
-position: relative !important;
-margin-right: 15px !important;
-margin-bottom: 10px !important;
-padding: 7px 19px !important;
-border-radius: 5px !important;
-background-color: #4962B3 !important;
-font-size: 12px !important;
-border: 1px solid #3e549a !important;
-text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3) !important;
+position: relative ;
+margin-right: 15px ;
+margin-bottom: 10px ;
+padding: 7px 19px ;
+border-radius: 5px ;
+background-color: #4962B3 ;
+font-size: 12px ;
+border: 1px solid #3e549a ;
+text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3) ;
 }
 
 
 /* .swal{
-margin-left: 300px !important;
-margin-bottom: 30px !important;
-margin-top: 30px !important;
+margin-left: 300px ;
+margin-bottom: 30px ;
+margin-top: 30px ;
 } */
 
 /* .swal{
-margin-left: 300px !important;
-margin-bottom: 30px !important;
-margin-top: 30px !important;
+margin-left: 300px ;
+margin-bottom: 30px ;
+margin-top: 30px ;
 } */
