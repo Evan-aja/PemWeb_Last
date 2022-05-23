@@ -8,29 +8,11 @@
     <title>Document</title>
 </head>
 <body>
+	@include('Partials.navbar')
         @if(auth()->check())
             <p>Hello, {{ auth()->user()->nama }}</p>
         @else
             <p>Hello, Stranger</p>
-        @endif
-        @if(auth()->check())
-            <div style="display: inline-block">
-                <a href="{{route('sessDestroy')}}">
-                    <button>Logout</button>
-                </a>
-                <a href="{{route('profView')}}">
-                    <button>Profil</button>
-                </a>
-            </div>
-        @else
-            <div style="display: inline-block">
-                <a href="{{route('regsCreate')}}">
-                    <button>Register</button>
-                </a>
-                <a href="{{route('sessCreate')}}">
-                    <button>Login</button>
-                </a>
-            </div>
         @endif
 </body>
 </html>
