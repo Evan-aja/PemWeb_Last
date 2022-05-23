@@ -8,6 +8,7 @@
     <title>Profile</title>
 </head>
 <body>
+    @include('Partials.navbar')
     <div id="fixed" style="display: block;">
         @if(auth()->check())
             <p>Nama : {{ auth()->user()->nama }}</p>
@@ -28,22 +29,18 @@
         </form>
     </div>
     <div style="display: inline-block;">
-        <button onclick="edit()">Edit</button>
-        <a href="{{route('sessDestroy')}}">
-            <button>Logout</button>
-        </a>
-        <a href="{{route('dashboard')}}">
-            <button>Beranda</button>
-        </a>
+        <button id="hide" onclick="edit()">Edit</button>
         <button style="cursor:pointer; display: none;" form="patch" type="submit" id="save" onclick="save()">Save</button>
     </div>
     <script>
         function edit(){
+	    document.getElementById('hide').style.display='none';
             document.getElementById('fixed').style.display='none';
             document.getElementById('edit').style.display='block';
             document.getElementById('save').style.display='inline-block';
         }
         function save(){
+	    document.getElementById('hide').style.display='inline-block';
             document.getElementById('save').style.display='none';
             document.getElementById('edit').style.display='none';
             document.getElementById('fixed').style.display='block';
