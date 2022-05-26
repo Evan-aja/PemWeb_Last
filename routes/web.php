@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::get('/pemilik', function () {
+    //    return view('welcome');
+        return view('pemilikDash');
+})->name('pemilikDash');
+
+
 Route::group(['prefix'=>'user'],function(){
     Route::get('/register',[\App\Http\Controllers\RegisterController::class,'create'])->name('regsCreate');
     Route::post('/register',[\App\Http\Controllers\RegisterController::class,'store'])->name('regsStore');
