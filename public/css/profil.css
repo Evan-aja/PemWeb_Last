@@ -27,8 +27,9 @@ input:focus{
 }
 
 .profil{
-    margin-left: 8.3vw;
+    margin-left: 8.8vw;
     width: 10vw;
+    cursor: pointer;
 }
 
 h1{
@@ -39,4 +40,8 @@ h1{
 
 .masuk_text{
     top: 9vh;
+}
+
+.ubahProfile{
+    background-color: rgb(204, 204, 204);
 }

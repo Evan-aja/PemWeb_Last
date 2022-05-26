@@ -20,19 +20,19 @@
         <table style="border-spacing: 10px;">
             <tr>
                 <td class="label">Nama</td>
-                <td class="inputProfile">{{ auth()->user()->nama }}</td>
+                <td class="inputProfile ubahProfile">{{ auth()->user()->nama }}</td>
             </tr>
             <tr>
                 <td class="label">NIK</td>
-                <td class="inputProfile">{{ auth()->user()->nik }}</td>
+                <td class="inputProfile ubahProfile">{{ auth()->user()->nik }}</td>
             </tr>
             <tr>
                 <td class="label">Telepon</td>
-                <td class="inputProfile">{{ auth()->user()->telepon }}</td>
+                <td class="inputProfile ubahProfile">{{ auth()->user()->telepon }}</td>
             </tr>
             <tr>
                 <td class="label">Kota Asal</td>
-                <td class="inputProfile">{{ auth()->user()->kota_asal }}</td>
+                <td class="inputProfile ubahProfile">{{ auth()->user()->kota_asal }}</td>
             </tr>
         </table>
         @else
@@ -76,6 +76,7 @@
             document.getElementById('fixed').style.display='none';
             document.getElementById('edit').style.display='block';
             document.getElementById('save').style.display='inline-block';
+            document
         }
         function save(){
 	    document.getElementById('hide').style.display='inline-block';
