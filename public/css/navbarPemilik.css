@@ -1,0 +1,67 @@
+.nav{
+    padding-top: 1% !important;
+    padding-left: 4% !important;
+    padding-bottom: 1% !important;
+    color: #7969E8;
+    /* text-decoration: underline !important; */
+    border-bottom: 1px solid rgba(24, 24, 24,.40) !important;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+}
+
+.red{
+    color: #A99DFF;
+}
+
+.logo{
+    font-size: 2rem !important;
+    font-weight: bolder;
+}
+
+.nav-others{
+    /* top: 7px; */
+    position: relative;
+    display: inline !important;
+    font-size: 1.3em !important;
+    margin-left: 60% !important;
+    word-spacing: 15px;
+}
+
+.keluar{
+    text-decoration: none !important;
+    position: absolute;
+    /* margin-top: -20% !important; */
+    top: 3.08% ;
+    right: 3%;
+    /* right: 6.3%; */
+    /* display: inline !important; */
+    /* box-sizing: border-box !important; */
+    font-size: 1.2rem !important;
+    background-color:#B54949;
+    color: white;
+    padding-top: 5px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-bottom: 5px !important;
+    border-radius: 5px !important;
+}
+
+.keluar:hover{
+    color: white;
+}
+
+
+.c{
+    text-decoration: none !important;
+    color: #7969E8 !important;
+}
+
+.pemilikdash{
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+.tombolsubmit{
+    cursor: pointer;
+}
