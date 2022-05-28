@@ -16,10 +16,17 @@
                 <span class='logo'>
                 <a class='c' href="{{route('dashboard')}}">Mobil<span class='red'>Malang</span></a>
                 </span>
+                <span style="display: inline-block; margin-left:50px;word-spacing:15px">
+                    <a href="{{route('profView')}}">Profil</a>
+                    <a href="{{route('dashboard')}}">Riwayat</a>
+                    <a>Mobil</a>
+                    <a>Pesanan</a>
+                    <a>Cek ID Pesanan</a>
+                </span>
                 <a  href = "{{route('sessDestroy')}}" class='keluar'>Keluar</a >
         </nav>
 
-            
+
         @else
                 <a href="{{route('sessCreate')}}">Log In</a>
                 <a href="{{route('regsCreate')}}">Register</a>

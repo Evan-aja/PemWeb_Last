@@ -12,7 +12,10 @@
     <link href="{{asset('css/create.css')}}" rel="stylesheet" type="text/css" />
 </head>
 <body>
-     <!-- @include('Partials.navbar')  -->
+     {{-- <!-- @include('Partials.navbar')  --> --}}
+    @if ($errors->any())
+        <script>alert('Data yang anda masukkan telah digunakan')</script>
+    @endif
     <div class="row">
         <div class="col s12 m12 l6">
           <div class="masuk_text">
@@ -22,23 +25,23 @@
                 <div class="form-group">
                     <input type="text" class="form-control input" id="nama" name="nama" placeholder="Nama" required>
                 </div>
-            
+
                 <div class="form-group">
                     <input type="text" class="form-control input" id="nik" name="nik" placeholder="NIK" required>
                 </div>
-            
+
                 <div class="form-group">
                     <input type="text" class="form-control input" id="kota_asal" name="kota_asal" placeholder="Kota asal" required>
                 </div>
-            
+
                 <div class="form-group">
                     <input type="number" class="form-control input" id="telepon" name="telepon" placeholder="Nomor HP" required>
                 </div>
-            
+
                 <div class="form-group">
                     <input type="password" class="form-control input" id="password" name="password" placeholder="Password" required>
                 </div>
-            
+
                 <div class="form-group">
                     <button style="cursor:pointer" type="submit" class="tombolsubmit">Submit</button>
                 </div>

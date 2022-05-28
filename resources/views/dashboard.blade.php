@@ -10,14 +10,17 @@
 
 </head>
 <body>
-	@include('Partials.navbar')
+	@php
+        use \App\Http\Controllers\SessionController;
+        echo SessionController::navbar();
+    @endphp
         @if(auth()->check())
             <p>Hello, {{ auth()->user()->nama }}</p>
             <h1>Pilih Mobil Kesukaanmu</h1>
             <div class="item">
                 @for ($i = 1; $i < 5; $i++)
                 <div class='card'>
-                    <img src="{{asset('image/image'.$i.'.jpg')}}"/> 
+                    <img src="{{asset('image/image'.$i.'.jpg')}}"/>
                     <div class='card-title'>
                         <p>Sisa {card.sisa}</p>
                     </div>
@@ -31,7 +34,7 @@
                     <div class='card-car-price'>
                         <p>{card.harga} <span class='price-hari'>/hari</span></p>
                     </div>
-                    </div> 
+                    </div>
                 @endfor
             </div>
         @else
