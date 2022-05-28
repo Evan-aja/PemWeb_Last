@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class RegisterController extends Controller
 {
@@ -25,10 +27,13 @@ class RegisterController extends Controller
                 'password' => 'required'
             ]);
 
-            $user = User::create(request(['nama','telepon','nik','kota_asal','password']));
+            try{
+                $user = User::create(request(['nama','telepon','nik','kota_asal','password']));
+                auth()->login($user);
 
-            auth()->login($user);
-
-            return redirect()->to('/');
+                return redirect()->route('dashboard');
+            }catch (Exception $e){
+                return Redirect::back()->withErrors($e->getMessage());
+            }
     }
 }

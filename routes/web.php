@@ -14,15 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-//    return view('welcome');
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/pemilik', function () {
-    //    return view('welcome');
-        return view('pemilikDash');
-})->name('pemilikDash');
+// Route::get('/pemilik', function () {
+//         return view('pemilikDash');
+// })->name('pemilikDash');
 
+Route::prefix('admin')->group(function () {
+    Route::get('/',[\App\Http\Controllers\CarController::class,'create'])->name('adminCreate');
+});
 
 Route::group(['prefix'=>'user'],function(){
     Route::get('/register',[\App\Http\Controllers\RegisterController::class,'create'])->name('regsCreate');
