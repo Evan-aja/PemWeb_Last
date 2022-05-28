@@ -8,9 +8,26 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function views(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    public static function admincheck(): bool{
+        if(auth()->user()->telepon=='081913910239' || auth()->user()->telepon == '085215168475' || auth()->user()->telepon == "081310887676"){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function create(){
+    }
+    public function views()
     {
-        return view('User.profile');
+        if (auth()->check()){
+            if($this->admincheck()){
+                return view('Admin.profile');
+            }else{
+                return view('User.profile');
+            }
+        }else{
+            return view('dashboard');
+        }
     }
     public function update(Request $request): \Illuminate\Http\RedirectResponse
     {

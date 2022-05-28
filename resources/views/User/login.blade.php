@@ -11,7 +11,7 @@
     <link href="{{asset('css/login.css')}}" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <!-- @include('Partials.navbar') -->
+    {{-- <!-- @include('Partials.navbar') --> --}}
 <div class="row">
     <div class="col s12 m12 l6">
       <div class="masuk_text">
@@ -21,11 +21,11 @@
             <div class="form-group">
                 <input type="number" class="form-control input" id="telepon" name="telepon" placeholder="Nomor HP" required>
             </div>
-        
+
             <div class="form-group">
                 <input type="password" class="form-control input" id="password" name="password" placeholder="Password" required>
             </div>
-        
+
             <div class="form-group">
                 <button style="cursor:pointer" type="submit" class="browser-default tombolsubmit">Login</button>
             </div>
