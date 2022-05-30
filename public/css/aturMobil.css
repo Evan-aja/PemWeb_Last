@@ -1,0 +1,77 @@
+table, th, tr{
+    border: 2px solid #7969E8;
+    border-collapse: collapse;
+    padding: 5px 20px;
+    text-align: center;
+}
+
+.padding{
+    padding-top: 10px;
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0 ;
+    padding: 0;
+}
+
+.inputM
+{    
+    font-family: 'Nunito', sans-serif;
+    border: 2px solid black ;
+    width: 20vw ;
+    height: 5vh  ;
+    box-sizing: border-box ;
+    border-radius: 6.5px ;
+    outline: none ;
+    padding: 10px 10px 10px 10px  ;
+    margin-bottom: 2vh;
+}
+
+.sec-botton{
+    background-color: white;
+    border: solid 2.5px #7969E8;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #7969E8;
+    cursor: pointer;
+    margin-bottom: 2vh;
+}
+
+.prim-botton{
+    background-color: #8B7FDF;
+    border: solid 2.5px #8B7FDF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 2vh;
+}
+
+.red-botton{
+    background-color: #B54949;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.edit{
+    margin-left: 5vw;
+    display: flex;
+    gap: 10vw;
+}
+
+h1,h3{
+    margin-top: 8vh;
+    margin-bottom: 3vh;
+    color: #7969E8;
+}
+
+h1{
+    margin-left: 5vw;
+}
+
+table{
+    margin-left: 5vw;
+}
+

@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
     <link href="{{asset('css/semua.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/profil.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('css/dashboardItems.css')}}" rel="stylesheet" type="text/css" />
+    <!-- <link href="{{asset('css/dashboardItems.css')}}" rel="stylesheet" type="text/css" /> -->
 </head>
 <body>
     {{-- @include('Partials.navbarPemilik') --}}
@@ -18,9 +18,10 @@
         use \App\Http\Controllers\SessionController;
         echo SessionController::navbar();
     @endphp
-    <div style="margin: 0 auto"><h1>Welcome, Admin {{ auth()->user()->nama }}!!!</h1></div>
+    <!-- <div style="margin: 0 auto"><h1>Welcome, Admin {{ auth()->user()->nama }}!!!</h1></div> -->
+    
     <div class="masuk_text">
-    <h1 style="margin-top: 10vh;">Profil</h1>
+    <h1 style="margin-top: 10vh;">Profil Admin</h1>
     <div id="fixed" style="display: block;">
         <table style="border-spacing: 10px;">
             <tr>
