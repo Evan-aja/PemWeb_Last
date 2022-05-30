@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="{{asset('css/aturMobil.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="{{asset('image/Untitleddd.png')}}">
+    <title>Mobil</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         function getCar(){
@@ -59,6 +61,20 @@
     <div class="edit">
         <div class="tambah">
             <h3>Tambah - Edit Mobil</h3>
+            <input type="text" class="inputM" placeholder="ID Mobil" required>
+            <br>
+            <input type="text" class="inputM" placeholder="Nama" required>
+            <br>
+            <input type="text" class="inputM" placeholder="Kapasitas Mesin" required>
+            <br>
+            <input type="text" class="inputM" placeholder="Harga" required>
+            <br>
+            <input type="text" class="inputM" placeholder="Jumlah Unit" required>
+            <br>
+            <button class="sec-botton" name="upload">Upload Foto</button>
+            <br>
+            <button class="prim-botton" name="add">Tambah</button>
+            <button class="prim-botton" name="edit">Edit</button>
             <form method="POST" action="{{route('adminAddMobil')}}">
                 @csrf
                 <input type="text" class="inputM" placeholder="Nama" name="nama" required>

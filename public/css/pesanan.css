@@ -1,0 +1,61 @@
+table, th{
+    border: 2px solid #7969E8;
+    border-collapse: collapse;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+td {
+    border-right: 2px solid #8B7FDF
+}
+
+table{
+    width: 70%;
+}
+
+.padding{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0 ;
+    padding: 0;
+}
+
+.prim-button{
+    background-color: #8B7FDF;
+    border: solid 2.5px #8B7FDF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 1vh;
+}
+
+.red-button{
+    background-color: #B54949;
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.sec-button{
+    background-color: white;
+    border: solid 2.5px #7969E8;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #7969E8;
+    cursor: pointer;
+    margin-bottom: 2vh;
+}
+
+h3{
+    margin-bottom: 3vh;
+}
+
+.status{
+    margin-left: 5vw;
+}

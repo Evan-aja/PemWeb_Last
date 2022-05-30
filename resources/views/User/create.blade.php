@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="{{asset('css/semua.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/create.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="{{asset('image/Untitleddd.png')}}">
 </head>
 <body>
     @if ($errors->any())
