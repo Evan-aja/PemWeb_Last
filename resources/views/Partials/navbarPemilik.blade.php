@@ -19,7 +19,7 @@
                 <span class="nav-others">
                     <a style="color: #7969E8 ;" href="{{route('profView')}}">Profil</a>
                     <a style="color: #7969E8 ;" href="{{route('dashboard')}}">Riwayat</a>
-                    <a style="color: #7969E8 ;" href="{{route('administrasi')}}">Admin</a>
+                    <a style="color: #7969E8 ;" href="{{route('adminCreate')}}">Admin</a>
                 </span>
                 <a  href = "{{route('sessDestroy')}}" class='keluar'>Keluar</a >
         </nav>

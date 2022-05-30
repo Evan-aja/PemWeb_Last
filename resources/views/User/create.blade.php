@@ -13,7 +13,6 @@
     <link rel="icon" href="{{asset('image/Untitleddd.png')}}">
 </head>
 <body>
-     {{-- <!-- @include('Partials.navbar')  --> --}}
     @if ($errors->any())
         <script>alert('Data yang anda masukkan telah digunakan')</script>
     @endif
