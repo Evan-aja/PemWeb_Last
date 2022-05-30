@@ -10,6 +10,7 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
     <link href="{{asset('css/semua.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/profil.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="{{asset('image/Untitleddd.png')}}">
     <!-- <link href="{{asset('css/dashboardItems.css')}}" rel="stylesheet" type="text/css" /> -->
 </head>
 <body>

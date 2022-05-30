@@ -36,6 +36,13 @@
     word-spacing: 15px;
 }
 
+.nav-others a{
+    text-decoration: none;
+}
+.nav-others a:hover{
+    text-decoration: underline;
+}
+
 .keluar{
     text-decoration: none !important;
     /* position: absolute; */

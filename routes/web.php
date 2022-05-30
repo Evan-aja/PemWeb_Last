@@ -17,6 +17,25 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
+// Route::get('/administrasi', function () {
+//     return view('Admin.administrasi');
+// })->name('administrasi');
+
+// Route::get('/mobil', function () {
+//     return view('Admin.aturMobil');
+// })->name('mobil');
+
+Route::get('/cekid', function () {
+    return view('Admin.cekid');
+})->name('cekid');
+
+Route::get('/pesanan', function () {
+    return view('Admin.pesanan');
+})->name('pesanan');
+
+// Route::get('/pemilik', function () {
+//         return view('pemilikDash');
+// })->name('pemilikDash');
 Route::prefix('/admin')->group(function () {
     Route::get('/',[\App\Http\Controllers\AdminController::class,'create'])->name('adminCreate');
     Route::prefix('/mobil')->group(function(){
