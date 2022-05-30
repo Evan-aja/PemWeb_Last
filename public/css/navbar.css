@@ -1,3 +1,10 @@
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0 ;
+    border: 0 ;
+    padding: 0 ;
+}
+
 .nav{
     padding-top: 1% !important;
     padding-left: 4% !important;
@@ -8,6 +15,8 @@
     -webkit-box-shadow: 0 4px 6px -6px #222;
     -moz-box-shadow: 0 4px 6px -6px #222;
     box-shadow: 0 4px 6px -6px #222;
+    top: 0%;
+    position: sticky;
 }
 
 .red{
@@ -21,19 +30,19 @@
 
 .nav-others{
     /* top: 7px; */
-    position: relative;
+    /* position: relative; */
     display: inline !important;
     font-size: 1.3em !important;
-    margin-left: 60% !important;
+    margin-left: 55% !important;
     word-spacing: 15px;
 }
 
 .keluar{
     text-decoration: none !important;
-    position: absolute;
+    /* position: absolute; */
     /* margin-top: -20% !important; */
-    margin-left: 20px;
-    top: 3.08% ;
+    /* margin-left: 20px; */
+    /* top: 3.08% ; */
     /* right: 6.3%; */
     /* display: inline !important; */
     /* box-sizing: border-box !important; */
