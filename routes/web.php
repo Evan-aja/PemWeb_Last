@@ -17,27 +17,18 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
-<<<<<<< HEAD
-Route::prefix('/admin')->group(function(){
-    Route::get('/',[\App\Http\Controllers\AdminController::class,'create'])->name('carAdmin');
-    Route::get('/add',[\App\Http\Controllers\AdminController::class,'AddCar'])->name('carAdminAdd');
-    Route::post('/add',[\App\Http\Controllers\AdminController::class,'StoreCar'])->name('carAdminStore');
+Route::prefix('/admin')->group(function () {
+    Route::get('/',[\App\Http\Controllers\AdminController::class,'create'])->name('adminCreate');
+    Route::prefix('/mobil')->group(function(){
+        Route::get('/',[\App\Http\Controllers\AdminController::class,'carmgmt'])->name('adminCreateMobil');
+        Route::get('/carone',[\App\Http\Controllers\AdminController::class,'carget'])->name('adminGetMobil');
+        Route::patch('/carone',[\App\Http\Controllers\AdminController::class,'carup'])->name('adminPatchMobil');
+        Route::delete('/',[\App\Http\Controllers\AdminController::class,'cardel'])->name('adminDelMobil');
+        Route::post('/',[\App\Http\Controllers\AdminController::class,'caradd'])->name('adminAddMobil');
+    });
 });
-=======
-Route::get('/administrasi', function () {
-    return view('Admin.administrasi');
-})->name('administrasi');
 
-Route::get('/mobil', function () {
-    return view('Admin.aturMobil');
-})->name('mobil');
-
-// Route::get('/pemilik', function () {
-//         return view('pemilikDash');
-// })->name('pemilikDash');
->>>>>>> 284582de8d6c23636997a70c6de957139eb40f03
-
-Route::prefix('mobil')->group(function () {
+Route::prefix('/mobil')->group(function () {
     Route::get('/',[\App\Http\Controllers\CarController::class,'create'])->name('carView');
     Route::get('/{mobil?}',[\App\Http\Controllers\CarController::class,'getcar'])->name('carOne');
     Route::post('/',[\App\Http\Controllers\CarController::class,'store'])->name('carRent');
@@ -51,7 +42,7 @@ Route::group(['prefix'=>'user'],function(){
     Route::post('/login',[\App\Http\Controllers\SessionController::class,'store'])->name('sessStore');
     Route::get('/logout',[\App\Http\Controllers\SessionController::class,'destroy'])->name('sessDestroy');
 
-    Route::get('/',[\App\Http\Controllers\ProfileController::class,'views'])->name('profView');
+    Route::get('/',[\App\Http\Controllers\ProfileController::class,'create'])->name('profView');
 
     Route::post('/',[\App\Http\Controllers\ProfileController::class,'update'])->name('profUpdate');
 });
