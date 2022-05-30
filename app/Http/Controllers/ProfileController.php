@@ -15,9 +15,7 @@ class ProfileController extends Controller
             return false;
         }
     }
-    public function create(){
-    }
-    public function views()
+    public function create()
     {
         if (auth()->check()){
             if($this->admincheck()){

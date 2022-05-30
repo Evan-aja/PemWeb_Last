@@ -9,20 +9,20 @@
     <title>Administrasi</title>
 </head>
 <body>
-@php
+    @php
         use \App\Http\Controllers\SessionController;
         echo SessionController::navbar();
     @endphp
 
-    
+
     <div class="menu">
     <h1>Selamat Datang Admin!</h1>
     <br>
-        <a class="tombol " href="{{route('mobil')}}">Mobil</a>
+        <a class="tombol " href="{{route('adminCreateMobil')}}">Mobil</a>
         <a class="tombol t" href="">Pesanan</a>
         <a class="tombol t" href="">Cek ID Pesanan</a>
     </div>
-    
+
 
 </body>
 </html>

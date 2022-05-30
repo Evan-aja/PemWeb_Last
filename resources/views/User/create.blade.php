@@ -12,7 +12,6 @@
     <link href="{{asset('css/create.css')}}" rel="stylesheet" type="text/css" />
 </head>
 <body>
-     {{-- <!-- @include('Partials.navbar')  --> --}}
     @if ($errors->any())
         <script>alert('Data yang anda masukkan telah digunakan')</script>
     @endif

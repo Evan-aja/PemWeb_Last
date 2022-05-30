@@ -9,4 +9,14 @@ class Car extends Model
 {
     use HasFactory;
 
+    /**
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'nama',
+        'mesin',
+        'harga',
+        'jumlah',
+        'foto'
+    ];
 }

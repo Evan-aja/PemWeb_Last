@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cars', function (Blueprint $table) {
-            $table->increments('id')->primary();
+            $table->id();
             $table->timestamps();
             $table->string('nama',50);
             $table->string('foto',500);
