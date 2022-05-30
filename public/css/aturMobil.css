@@ -1,12 +1,26 @@
-table, th, tr{
+table, th{
     border: 2px solid #7969E8;
     border-collapse: collapse;
-    padding: 5px 20px;
+    padding: 5px 10px;
     text-align: center;
 }
 
+td {
+    border-right: 2px solid #7969E8;
+    border-left:  2px solid #7969E8;
+}
+
+tr:last-child{
+    border-bottom:2px solid #7969E8; ;
+}
+
+table{
+    width: 50%;
+}
+
 .padding{
-    padding-top: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 *{

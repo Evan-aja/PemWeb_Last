@@ -25,6 +25,14 @@ Route::get('/mobil', function () {
     return view('Admin.aturMobil');
 })->name('mobil');
 
+Route::get('/cekid', function () {
+    return view('Admin.cekid');
+})->name('cekid');
+
+Route::get('/pesanan', function () {
+    return view('Admin.pesanan');
+})->name('pesanan');
+
 // Route::get('/pemilik', function () {
 //         return view('pemilikDash');
 // })->name('pemilikDash');
