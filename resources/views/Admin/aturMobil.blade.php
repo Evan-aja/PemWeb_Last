@@ -8,9 +8,33 @@
     <link href="{{asset('css/aturMobil.css')}}" rel="stylesheet" type="text/css" />
     <link rel="icon" href="{{asset('image/Untitleddd.png')}}">
     <title>Mobil</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function getCar(){
+            $.ajax({
+                type:'GET',
+                url:'{{route('adminGetMobil')}}',
+                data:'_token=<?php echo csrf_token() ?>',
+                success:function(data){
+                    $('#msg').html(data.msg);
+                    // console.log(data.msg);
+                }
+            })
+        }
+    </script>
+    <title>Document</title>
 </head>
 <body>
-@php
+    @if(\Session::has('error'))
+        <script>alert("{!!\Session::get('error')!!}")</script>
+    @endif
+    @if(\Session::has('message'))
+        <script>alert("{!!\Session::get('message')!!}")</script>
+    @endif
+    @if(\Session::has('succ'))
+        <script>alert("{!!\Session::get('succ')!!}")</script>
+    @endif
+    @php
         use \App\Http\Controllers\SessionController;
         echo SessionController::navbar();
     @endphp
@@ -23,32 +47,19 @@
             <th>Harga</th>
             <th>Jumlah Unit</th>
         </tr>
+        @foreach ($cars as $i)
         <tr >
-            <td class="padding">123123</td>
-            <td class="padding">Pajero</td>
-            <td class="padding">12312 rpm</td>
-            <td class="padding">Rp . 123123</td>
-            <td class="padding">1</td>
+            <td class="padding">{{$i->id}}</td>
+            <td class="padding">{{$i->nama}}</td>
+            <td class="padding">{{$i->mesin}}</td>
+            <td class="padding">Rp. {{$i->harga}}</td>
+            <td class="padding">{{$i->jumlah}}</td>
         </tr>
-        <tr >
-            <td class="padding">123123</td>
-            <td class="padding">Pajero</td>
-            <td class="padding">12312 rpm</td>
-            <td class="padding">Rp . 123123</td>
-            <td class="padding">1</td>
-        </tr>
-        <tr >
-            <td class="padding">123123</td>
-            <td class="padding">Pajero</td>
-            <td class="padding">12312 rpm</td>
-            <td class="padding">Rp . 123123</td>
-            <td class="padding">1</td>
-        </tr>
+        @endforeach
     </table>
 
     <div class="edit">
         <div class="tambah">
-            <form action="" >
             <h3>Tambah - Edit Mobil</h3>
             <input type="text" class="inputM" placeholder="ID Mobil" required>
             <br>
@@ -64,16 +75,41 @@
             <br>
             <button class="prim-botton" name="add">Tambah</button>
             <button class="prim-botton" name="edit">Edit</button>
+            <form method="POST" action="{{route('adminAddMobil')}}">
+                @csrf
+                <input type="text" class="inputM" placeholder="Nama" name="nama" required>
+                <br>
+                <input type="text" class="inputM" placeholder="Kapasitas Mesin" name="mesin" required>
+                <br>
+                <input type="text" class="inputM" placeholder="Harga" name="harga" required>
+                <br>
+                <input type="text" class="inputM" placeholder="Jumlah Unit" name="jumlah" required>
+                <br>
+                <input type="text" class="inputM" placeholder="Upload Foto" name="foto" required>
+                <br>
+                <button type="submit" class="prim-botton">Tambah</button>
             </form>
-            
+
         </div>
         <div class="kurang">
-            <form action="">
-                <h3>Hapus Mobil</h3>
-                <input type="text" class="inputM" placeholder="ID Mobil">
+
+        </div>
+        <div class="kurang">
+            <h3>Hapus Mobil</h3>
+            <form method="POST" action="{{route('adminDelMobil')}}" >
+                @method('DELETE')
+                @csrf
+                <input type="text" class="inputM" placeholder="ID Mobil" name="id">
                 <br>
-                <button class="red-botton">Hapus</button>
+                <button type="submit" class="red-botton">Hapus</button>
             </form>
+            <h3>Edit Mobil</h3>
+            <div id="msg">
+                @csrf
+                <input type="text" class="inputM" placeholder="ID Mobil" name="id">
+            </div>
+            <br>
+            <button type="submit" class="red-botton" onclick="getCar()">Edit</button>
         </div>
     </div>
 </body>
