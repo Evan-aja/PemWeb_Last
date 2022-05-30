@@ -1,0 +1,24 @@
+.tombol{
+    background-color: #7969E8;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 6px 10px ;
+}
+*{
+    font-family: 'Nunito', sans-serif;
+   
+}
+
+.menu{
+    margin-left: 8vw;
+}
+
+.t{
+    margin-left: 1vw;
+}
+
+h1{
+    color: #7969E8;
+    margin-top: 15vh;
+}

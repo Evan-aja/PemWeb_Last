@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::get('/administrasi', function () {
+    return view('Admin.administrasi');
+})->name('administrasi');
+
+Route::get('/mobil', function () {
+    return view('Admin.aturMobil');
+})->name('mobil');
+
 // Route::get('/pemilik', function () {
 //         return view('pemilikDash');
 // })->name('pemilikDash');
@@ -34,5 +42,6 @@ Route::group(['prefix'=>'user'],function(){
     Route::get('/logout',[\App\Http\Controllers\SessionController::class,'destroy'])->name('sessDestroy');
 
     Route::get('/',[\App\Http\Controllers\ProfileController::class,'views'])->name('profView');
+
     Route::post('/',[\App\Http\Controllers\ProfileController::class,'update'])->name('profUpdate');
 });
