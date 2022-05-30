@@ -17,12 +17,16 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
-// Route::get('/pemilik', function () {
-//         return view('pemilikDash');
-// })->name('pemilikDash');
+Route::prefix('/admin')->group(function(){
+    Route::get('/',[\App\Http\Controllers\AdminController::class,'create'])->name('carAdmin');
+    Route::get('/add',[\App\Http\Controllers\AdminController::class,'AddCar'])->name('carAdminAdd');
+    Route::post('/add',[\App\Http\Controllers\AdminController::class,'StoreCar'])->name('carAdminStore');
+});
 
-Route::prefix('admin')->group(function () {
-    Route::get('/',[\App\Http\Controllers\CarController::class,'create'])->name('adminCreate');
+Route::prefix('mobil')->group(function () {
+    Route::get('/',[\App\Http\Controllers\CarController::class,'create'])->name('carView');
+    Route::get('/{mobil?}',[\App\Http\Controllers\CarController::class,'getcar'])->name('carOne');
+    Route::post('/',[\App\Http\Controllers\CarController::class,'store'])->name('carRent');
 });
 
 Route::group(['prefix'=>'user'],function(){
