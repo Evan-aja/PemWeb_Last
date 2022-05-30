@@ -17,11 +17,25 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
+<<<<<<< HEAD
 Route::prefix('/admin')->group(function(){
     Route::get('/',[\App\Http\Controllers\AdminController::class,'create'])->name('carAdmin');
     Route::get('/add',[\App\Http\Controllers\AdminController::class,'AddCar'])->name('carAdminAdd');
     Route::post('/add',[\App\Http\Controllers\AdminController::class,'StoreCar'])->name('carAdminStore');
 });
+=======
+Route::get('/administrasi', function () {
+    return view('Admin.administrasi');
+})->name('administrasi');
+
+Route::get('/mobil', function () {
+    return view('Admin.aturMobil');
+})->name('mobil');
+
+// Route::get('/pemilik', function () {
+//         return view('pemilikDash');
+// })->name('pemilikDash');
+>>>>>>> 284582de8d6c23636997a70c6de957139eb40f03
 
 Route::prefix('mobil')->group(function () {
     Route::get('/',[\App\Http\Controllers\CarController::class,'create'])->name('carView');
@@ -38,5 +52,6 @@ Route::group(['prefix'=>'user'],function(){
     Route::get('/logout',[\App\Http\Controllers\SessionController::class,'destroy'])->name('sessDestroy');
 
     Route::get('/',[\App\Http\Controllers\ProfileController::class,'views'])->name('profView');
+
     Route::post('/',[\App\Http\Controllers\ProfileController::class,'update'])->name('profUpdate');
 });
