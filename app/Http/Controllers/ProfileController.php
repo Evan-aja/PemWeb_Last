@@ -41,6 +41,8 @@ class ProfileController extends Controller
         $user->nik=$request->get('nik');
         $user->telepon=$request->get('telepon');
         $user->kota_asal=$request->get('kota_asal');
+        date_default_timezone_set('Asia/Jakarta');
+        $user->updated_at=date('Y-m-d H:i:s');
 
         $user->save();
 
