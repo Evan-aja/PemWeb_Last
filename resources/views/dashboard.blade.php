@@ -15,27 +15,29 @@
         use \App\Http\Controllers\SessionController;
         echo SessionController::navbar();
     @endphp
+
         @if(auth()->check())
             <p>Hello, {{ auth()->user()->nama }}</p>
             <h1>Pilih Mobil Kesukaanmu</h1>
             <div class="item">
-                @for ($i = 0; $i < 5; $i++)
+                @foreach ($mobil as $mobil)
                 <div class='card'>
-                    <img src="{{$mobil[$i]['foto']}}"/>
+                    <img src="{{$mobil['foto']}}"/>
                     <div class='card-title'>
-                        <p>Sisa {{$mobil[$i]['jumlah']}}</p>
+                        <p>Sisa {{$mobil['jumlah']}}</p>
                     </div>
                     <div class='card-car-name'>
-                        <p>{{$mobil[$i]['nama']}} </p>
+                        <p>{{$mobil['nama']}} </p>
                     </div>
                     <div class='card-car-cc'>
-                        <p>{{$mobil[$i]['mesin']}} </p>
+                        <p>{{$mobil['mesin']}} </p>
                     </div>
                     <div class='card-car-price'>
-                        <p>{{$mobil[$i]['harga']}} <span class='price-hari'>/hari</span></p>
+                        <p>{{$mobil['harga']}} <span class='price-hari'>/hari</span></p>
                     </div>
-                    </div>
-                @endfor
+                </div>
+                @endforeach
+
             </div>
         @else
             <p>Hello, Stranger</p>
