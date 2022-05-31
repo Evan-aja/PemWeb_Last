@@ -20,6 +20,10 @@
                     $('#msg').html(data.msg[0]);
                 }
             })
+
+            document.getElementById('red-botton').style.display='none';
+            document.getElementById('idmsg').style.display='none';
+            document.getElementById('after').style.display='inline-block';
         }
     </script>
     <title>Document</title>
@@ -61,7 +65,7 @@
 
     <div class="edit">
         <div class="tambah">
-            <h3>Tambah - Edit Mobil</h3>
+            <h3>Tambah Mobil</h3>
             {{-- <input type="text" class="inputM" placeholder="ID Mobil" required>
             <br>
             <input type="text" class="inputM" placeholder="Nama" required>
@@ -93,6 +97,30 @@
 
         </div>
 
+        <div class="ubah">
+            <h3>Edit Mobil</h3>
+            <div id="msg">
+                @csrf
+                <input type="text" class="inputM" placeholder="ID Mobil" name="id" id='idmsg' >
+            </div>
+            <button id="red-botton" type="button" class="prim-botton" onclick="getCar()" style="display: block;">Pilih</button>
+            
+            <div id="after" style="display:none;">
+                <input type="text" class="inputM" placeholder="Nama" required>
+                <br>
+                <input type="text" class="inputM" placeholder="Kapasitas Mesin" required>
+                <br>
+                <input type="text" class="inputM" placeholder="Harga" required>
+                <br>
+                <input type="text" class="inputM" placeholder="Jumlah Unit" required>
+                <br>
+                <input type="text" class="inputM" placeholder="Upload Foto" name="foto" required>
+                <br>
+                <button class="prim-botton" name="edit">Edit</button>
+            </div>
+            
+        </div>
+
         <div class="kurang">
             <h3>Hapus Mobil</h3>
             <form method="POST" action="{{route('adminDelMobil')}}" >
@@ -102,27 +130,10 @@
                 <br>
                 <button type="submit" class="red-botton">Hapus</button>
             </form>
-            <h3>Edit Mobil</h3>
-            <div id="msg">
-                @csrf
-                <input type="text" class="inputM" placeholder="ID Mobil" name="id" id='idmsg'>
-                <br>
-            </div>
-            <br>
-            <button type="button" class="red-botton" onclick="getCar()">Edit</button>
-            <br>
-            <input type="text" class="inputM" placeholder="Nama" required>
-            <br>
-            <input type="text" class="inputM" placeholder="Kapasitas Mesin" required>
-            <br>
-            <input type="text" class="inputM" placeholder="Harga" required>
-            <br>
-            <input type="text" class="inputM" placeholder="Jumlah Unit" required>
-            <br>
-            <input type="text" class="inputM" placeholder="Upload Foto" name="foto" required>
-            <br>
-            <button class="prim-botton" name="edit">Edit</button>
+            
         </div>
+
+
 
 
     </div>
