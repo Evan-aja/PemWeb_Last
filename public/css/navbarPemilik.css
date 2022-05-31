@@ -5,6 +5,7 @@
     padding: 0 ;
 }
 .nav{
+    z-index: 9;
     padding-top: 1% !important;
     padding-left: 4% !important;
     padding-bottom: 1% !important;
@@ -32,7 +33,7 @@
     /* position: relative; */
     display: inline !important;
     font-size: 1.3em !important;
-    margin-left: 50% !important;
+    margin-left: 55% !important;
     word-spacing: 15px;
 }
 
