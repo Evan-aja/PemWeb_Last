@@ -10,7 +10,10 @@ h1{
 }
 
 .item{
+    width: 85%;
     margin-top: 20px !important;
+    margin-left: 20px !important;
+    /* overflow-y: auto; */
 }
 .card{
     position: relative;
@@ -22,6 +25,7 @@ h1{
     float: left !important;
     margin-right: 30px !important;
     left: 10%;
+    margin-bottom: 20px;
 }
 
 .card:hover{
