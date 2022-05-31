@@ -22,8 +22,6 @@
                 </span>
                 <a  href = "{{route('sessDestroy')}}" class='keluar'>Keluar</a >
         </nav>
-        {{-- <a href="{{route('profView')}}">Hi {{ auth()->user()->nama }}</a>
-        <a href="{{route('sessDestroy')}}">Log Out</a> --}}
         @else
                 <a href="{{route('sessCreate')}}">Log In</a>
                 <a href="{{route('regsCreate')}}">Register</a>

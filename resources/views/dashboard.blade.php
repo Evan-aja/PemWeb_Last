@@ -19,21 +19,20 @@
             <p>Hello, {{ auth()->user()->nama }}</p>
             <h1>Pilih Mobil Kesukaanmu</h1>
             <div class="item">
-                @for ($i = 1; $i < 5; $i++)
+                @for ($i = 0; $i < 5; $i++)
                 <div class='card'>
-                    <img src="{{asset('image/image'.$i.'.jpg')}}"/>
+                    <img src="{{$mobil[$i]['foto']}}"/>
                     <div class='card-title'>
-                        <p>Sisa {card.sisa}</p>
+                        <p>Sisa {{$mobil[$i]['jumlah']}}</p>
                     </div>
                     <div class='card-car-name'>
-                        <p>{card.dMobil} </p>
-                        <p>{card.bMobil} </p>
+                        <p>{{$mobil[$i]['nama']}} </p>
                     </div>
                     <div class='card-car-cc'>
-                        <p>{card.cc} </p>
+                        <p>{{$mobil[$i]['mesin']}} </p>
                     </div>
                     <div class='card-car-price'>
-                        <p>{card.harga} <span class='price-hari'>/hari</span></p>
+                        <p>{{$mobil[$i]['harga']}} <span class='price-hari'>/hari</span></p>
                     </div>
                     </div>
                 @endfor
