@@ -10,14 +10,14 @@
     <title>Mobil</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        function getCar(){
+        function getCar($id){
             $.ajax({
                 type:'GET',
                 url:'{{route('adminGetMobil')}}',
-                data:'_token=<?php echo csrf_token() ?>',
+                data:'id='+$('#idmsg').val()+'&_token=<?php echo csrf_token() ?>',
                 success:function(data){
-                    $('#msg').html(data.msg);
-                    // console.log(data.msg);
+                    console.log(data.msg[0]);
+                    $('#msg').html(data.msg[0]);
                 }
             })
         }
@@ -25,6 +25,7 @@
     <title>Document</title>
 </head>
 <body>
+
     @if(\Session::has('error'))
         <script>alert("{!!\Session::get('error')!!}")</script>
     @endif
@@ -61,7 +62,7 @@
     <div class="edit">
         <div class="tambah">
             <h3>Tambah - Edit Mobil</h3>
-            <input type="text" class="inputM" placeholder="ID Mobil" required>
+            {{-- <input type="text" class="inputM" placeholder="ID Mobil" required>
             <br>
             <input type="text" class="inputM" placeholder="Nama" required>
             <br>
@@ -74,7 +75,7 @@
             <button class="sec-botton" name="upload">Upload Foto</button>
             <br>
             <button class="prim-botton" name="add">Tambah</button>
-            <button class="prim-botton" name="edit">Edit</button>
+            <button class="prim-botton" name="edit">Edit</button> --}}
             <form method="POST" action="{{route('adminAddMobil')}}">
                 @csrf
                 <input type="text" class="inputM" placeholder="Nama" name="nama" required>
@@ -91,9 +92,7 @@
             </form>
 
         </div>
-        <div class="kurang">
 
-        </div>
         <div class="kurang">
             <h3>Hapus Mobil</h3>
             <form method="POST" action="{{route('adminDelMobil')}}" >
@@ -106,11 +105,26 @@
             <h3>Edit Mobil</h3>
             <div id="msg">
                 @csrf
-                <input type="text" class="inputM" placeholder="ID Mobil" name="id">
+                <input type="text" class="inputM" placeholder="ID Mobil" name="id" id='idmsg'>
+                <br>
             </div>
             <br>
-            <button type="submit" class="red-botton" onclick="getCar()">Edit</button>
+            <button type="button" class="red-botton" onclick="getCar()">Edit</button>
+            <br>
+            <input type="text" class="inputM" placeholder="Nama" required>
+            <br>
+            <input type="text" class="inputM" placeholder="Kapasitas Mesin" required>
+            <br>
+            <input type="text" class="inputM" placeholder="Harga" required>
+            <br>
+            <input type="text" class="inputM" placeholder="Jumlah Unit" required>
+            <br>
+            <input type="text" class="inputM" placeholder="Upload Foto" name="foto" required>
+            <br>
+            <button class="prim-botton" name="edit">Edit</button>
         </div>
+
+
     </div>
 </body>
 </html>
