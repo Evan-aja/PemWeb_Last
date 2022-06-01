@@ -23,6 +23,26 @@ Route::get('/pesanan', function () {
     return view('Admin.pesanan');
 })->name('pesanan');
 
+Route::get('/formulir', function () {
+    return view('Penyewaan.formulir');
+})->name('formulir');
+
+Route::get('/waiting', function () {
+    return view('Penyewaan.waiting');
+})->name('waiting');
+
+Route::get('/riwayat', function () {
+    return view('riwayat');
+})->name('riwayat');
+
+Route::get('/berhasil', function () {
+    return view('berhasil');
+})->name('berhasil');
+
+Route::get('/pembayaran', function () {
+    return view('Penyewaan.pembayaran');
+})->name('pembayaran');
+
 Route::prefix('/admin')->group(function () {
     Route::get('/',[\App\Http\Controllers\AdminController::class,'create'])->name('adminCreate');
     Route::prefix('/mobil')->group(function(){
