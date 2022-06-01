@@ -3,8 +3,9 @@ h1{
     color: #6354C8;
     top: 4vh;
     font-size: 3rem;
-    display: inline;
-    left: 29%;
+    /* display: inline; */
+    /* left: 29%; */
+    text-align: center;
     /* margin-bottom: 10vh !important; */
     font-weight: bolder;
 }
@@ -12,7 +13,7 @@ h1{
 .item{
     width: 85%;
     margin-top: 20px !important;
-    margin-left: 20px !important;
+    margin-left: 65px !important;
     /* overflow-y: auto; */
 }
 .card{

@@ -30,27 +30,27 @@
                     <th>Pengembalian</th>
                     <th>Action</th>
                 </tr>
-                <tr class="padding">
+                <tr>
                     <form action="" >
-                        <td class="padding">1234</td>
-                        <td class="padding">Toyota Avanza</td>
-                        <td class="padding">Rp. 300.000</td>
-                        <td class="padding">12/01/2022</td>
-                        <td class="padding">13/01/2022</td>
-                        <td class="padding">
+                        <td>1234</td>
+                        <td>Toyota Avanza</td>
+                        <td>Rp. 300.000</td>
+                        <td>12/01/2022</td>
+                        <td>13/01/2022</td>
+                        <td>
                             <button class="prim-button">Konfirmasi</button>
                             <button class="red-button">Batal</button>
                         </td>
                     </form>
                 </tr>
-                <tr class="padding">
+                <tr>
                     <form action="" >
-                        <td class="padding">1234</td>
-                        <td class="padding">Toyota Avanza</td>
-                        <td class="padding">Rp. 300.000</td>
-                        <td class="padding">12/01/2022</td>
-                        <td class="padding">13/01/2022</td>
-                        <td class="padding">
+                        <td>1234</td>
+                        <td>Toyota Avanza</td>
+                        <td>Rp. 300.000</td>
+                        <td>12/01/2022</td>
+                        <td>13/01/2022</td>
+                        <td>
                             <button class="prim-button">Konfirmasi</button>
                             <button class="red-button">Batal</button>
                         </td>
@@ -71,19 +71,19 @@
                     <th>Pengambilan</th>
                     <th>Pengembalian</th>
                 </tr>
-                <tr class="padding">
-                        <td class="padding">1234</td>
-                        <td class="padding">Toyota Avanza</td>
-                        <td class="padding">Rp. 300.000</td>
-                        <td class="padding">12/01/2022</td>
-                        <td class="padding">13/01/2022</td>
+                <tr>
+                        <td>1234</td>
+                        <td>Toyota Avanza</td>
+                        <td>Rp. 300.000</td>
+                        <td>12/01/2022</td>
+                        <td>13/01/2022</td>
                 </tr>
-                <tr class="padding">
-                        <td class="padding">1234</td>
-                        <td class="padding">Toyota Avanza</td>
-                        <td class="padding">Rp. 300.000</td>
-                        <td class="padding">12/01/2022</td>
-                        <td class="padding">13/01/2022</td>
+                <tr>
+                        <td>1234</td>
+                        <td>Toyota Avanza</td>
+                        <td>Rp. 300.000</td>
+                        <td>12/01/2022</td>
+                        <td>13/01/2022</td>
                 </tr>
             </table>
         
@@ -101,27 +101,27 @@
                     <th>Pengembalian</th>
                     <th>Action</th>
                 </tr>
-                <tr class="padding">
+                <tr>
                     <form action="" >
-                        <td class="padding">1234</td>
-                        <td class="padding">Toyota Avanza</td>
-                        <td class="padding">Rp. 300.000</td>
-                        <td class="padding">12/01/2022</td>
-                        <td class="padding">13/01/2022</td>
-                        <td class="padding">
+                        <td>1234</td>
+                        <td>Toyota Avanza</td>
+                        <td>Rp. 300.000</td>
+                        <td>12/01/2022</td>
+                        <td>13/01/2022</td>
+                        <td>
                             <button class="prim-button">Konfirmasi</button>
                             <button class="sec-button">Lihat Foto</button>
                         </td>
                     </form>
                 </tr>
-                <tr class="padding">
+                <tr>
                     <form action="" >
-                        <td class="padding">1234</td>
-                        <td class="padding">Toyota Avanza</td>
-                        <td class="padding">Rp. 300.000</td>
-                        <td class="padding">12/01/2022</td>
-                        <td class="padding">13/01/2022</td>
-                        <td class="padding">
+                        <td>1234</td>
+                        <td>Toyota Avanza</td>
+                        <td>Rp. 300.000</td>
+                        <td>12/01/2022</td>
+                        <td>13/01/2022</td>
+                        <td>
                             <button class="prim-button">Konfirmasi</button>
                             <button class="sec-button">Lihat Foto</button>
                         </td>
@@ -143,26 +143,26 @@
                     <th>Pengembalian</th>
                     <th>Action</th>
                 </tr>
-                <tr class="padding">
+                <tr>
                     <form action="" >
-                        <td class="padding">1234</td>
-                        <td class="padding">Toyota Avanza</td>
-                        <td class="padding">Rp. 300.000</td>
-                        <td class="padding">12/01/2022</td>
-                        <td class="padding">13/01/2022</td>
-                        <td class="padding">
+                        <td>1234</td>
+                        <td>Toyota Avanza</td>
+                        <td>Rp. 300.000</td>
+                        <td>12/01/2022</td>
+                        <td>13/01/2022</td>
+                        <td>
                             <button class="sec-button">Lihat Foto</button>
                         </td>
                     </form>
                 </tr>
-                <tr class="padding">
+                <tr>
                     <form action="" >
-                        <td class="padding">1234</td>
-                        <td class="padding">Toyota Avanza</td>
-                        <td class="padding">Rp. 300.000</td>
-                        <td class="padding">12/01/2022</td>
-                        <td class="padding">13/01/2022</td>
-                        <td class="padding">
+                        <td>1234</td>
+                        <td>Toyota Avanza</td>
+                        <td>Rp. 300.000</td>
+                        <td>12/01/2022</td>
+                        <td>13/01/2022</td>
+                        <td>
                             <button class="sec-button">Lihat Foto</button>
                         </td>
                     </form>

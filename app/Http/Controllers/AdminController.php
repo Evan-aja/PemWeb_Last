@@ -57,9 +57,9 @@ class AdminController extends Controller
             if(ProfileController::admincheck()){
                 $query=DB::table('cars')->where('id','=',$request->get('id'))->delete();
                 if($query<=0){
-                    return Redirect::back()->with('error','Gagal Dihapus');
+                    return Redirect::back()->with('error','ID Mobil tidak ditemukan');
                 }
-                return Redirect::back()->with("message","Berhasil dihapus");
+                return Redirect::back()->with("message","Mobil berhasil dihapus");
             }else{
                 return Redirect::route('dashboard');
             }
