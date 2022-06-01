@@ -6,7 +6,9 @@ table, th{
 }
 
 td {
-    border-right: 2px solid #8B7FDF
+    border-right: 2px solid #8B7FDF;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 table{
@@ -14,8 +16,7 @@ table{
 }
 
 .padding{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    
 }
 
 *{
