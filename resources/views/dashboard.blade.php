@@ -21,21 +21,24 @@
             <h1>Pilih Mobil Kesukaanmu</h1>
             <div class="item">
                 @foreach ($mobil as $mobil)
-                <div class='card'>
-                    <img src="{{$mobil['foto']}}"/>
-                    <div class='card-title'>
-                        <p>Sisa {{$mobil['jumlah']}}</p>
+                <a href="{{route('formulir')}} ">
+                    <div class='card'>
+                        <img src="{{$mobil['foto']}}"/>
+                        <div class='card-title'>
+                            <p>Sisa {{$mobil['jumlah']}}</p>
+                        </div>
+                        <div class='card-car-name'>
+                            <p>{{$mobil['nama']}} </p>
+                        </div>
+                        <div class='card-car-cc'>
+                            <p>{{$mobil['mesin']}} cc </p>
+                        </div>
+                        <div class='card-car-price'>
+                            <p>{{$mobil['harga']}} <span class='price-hari'>/hari</span></p>
+                        </div>
                     </div>
-                    <div class='card-car-name'>
-                        <p>{{$mobil['nama']}} </p>
-                    </div>
-                    <div class='card-car-cc'>
-                        <p>{{$mobil['mesin']}} </p>
-                    </div>
-                    <div class='card-car-price'>
-                        <p>{{$mobil['harga']}} <span class='price-hari'>/hari</span></p>
-                    </div>
-                </div>
+                </a>
+                
                 @endforeach
 
             </div>
