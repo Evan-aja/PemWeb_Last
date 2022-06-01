@@ -22,7 +22,7 @@
             })
         }
     </script>
-    <title>Document</title>
+    <title>Atur Mobil</title>
 </head>
 <body>
 
@@ -58,59 +58,88 @@
         </tr>
         @endforeach
     </table>
-
-    <div class="edit">
-        <div class="tambah">
-            <h3>Tambah Mobil</h3>
-            <form method="POST" action="{{route('adminAddMobil')}}">
-                @csrf
-                <input type="text" class="inputM" placeholder="Nama" name="nama" required>
-                <br>
-                <input type="text" class="inputM" placeholder="Kapasitas Mesin" name="mesin" required>
-                <br>
-                <input type="text" class="inputM" placeholder="Harga" name="harga" required>
-                <br>
-                <input type="text" class="inputM" placeholder="Jumlah Unit" name="jumlah" required>
-                <br>
-                <input type="text" class="inputM" placeholder="Upload Foto" name="foto" required>
-                <br>
-                <button type="submit" class="prim-botton">Tambah</button>
-            </form>
-
+        
+        <div class="tombol">
+            <button onclick="tambah()" id="plus" class="prim-button">Tambah Mobil</button>
+            <button onclick="ubah()" id="edit" class="prim-button">Edit Mobil</button>
+            <button onclick="kurang()" id="hapus" class="prim-button">Hapus Mobil</button>
         </div>
+        
+        <div class="edit">
+            <div id="tambah" class="tambah" style="display: none;">
+                <h3>Tambah Mobil</h3>
+                <form method="POST" action="{{route('adminAddMobil')}}">
+                    @csrf
+                    <input type="text" class="inputM" placeholder="Nama" name="nama" required>
+                    <br>
+                    <input type="text" class="inputM" placeholder="Kapasitas Mesin" name="mesin" required>
+                    <br>
+                    <input type="text" class="inputM" placeholder="Harga" name="harga" required>
+                    <br>
+                    <input type="text" class="inputM" placeholder="Jumlah Unit" name="jumlah" required>
+                    <br>
+                    <input type="text" class="inputM" placeholder="Upload Foto" name="foto" required>
+                    <br>
+                    <button type="submit" class="prim-button">Tambah</button>
+                </form>
 
-        <div class="ubah">
-            <h3>Edit Mobil</h3>
-            
-            <div id="after">
-                 <input type="text" class="inputM" placeholder="ID Mobil" required>
-                <br>
-                <input type="text" class="inputM" placeholder="Nama" >
-                <br>
-                <input type="text" class="inputM" placeholder="Kapasitas Mesin" >
-                <br>
-                <input type="text" class="inputM" placeholder="Harga" >
-                <br>
-                <input type="text" class="inputM" placeholder="Jumlah Unit">
-                <br>
-                <input type="text" class="inputM" placeholder="Upload Foto" name="foto" >
-                <br>
-                <button class="prim-botton" name="edit">Edit</button>
+            </div>
+
+            <div id="ubah" class="ubah" style="display: none;">
+                <h3>Edit Mobil</h3>
+                
+                <div id="after">
+                    <input type="text" class="inputM" placeholder="ID Mobil" required>
+                    <br>
+                    <input type="text" class="inputM" placeholder="Nama" >
+                    <br>
+                    <input type="text" class="inputM" placeholder="Kapasitas Mesin" >
+                    <br>
+                    <input type="text" class="inputM" placeholder="Harga" >
+                    <br>
+                    <input type="text" class="inputM" placeholder="Jumlah Unit">
+                    <br>
+                    <input type="text" class="inputM" placeholder="Upload Foto" name="foto" >
+                    <br>
+                    <button class="prim-button" name="edit">Edit</button>
+                </div>
+            </div>
+
+            <div id="kurang" class="kurang" style="display: none;">
+                <h3>Hapus Mobil</h3>
+                <form method="POST" action="{{route('adminDelMobil')}}" >
+                    @method('DELETE')
+                    @csrf
+                    <input type="text" class="inputM" placeholder="ID Mobil" name="id">
+                    <br>
+                    <button type="submit" class="red-botton">Hapus</button>
+                </form>
+                
+
+
             </div>
         </div>
 
-        <div class="kurang">
-            <h3>Hapus Mobil</h3>
-            <form method="POST" action="{{route('adminDelMobil')}}" >
-                @method('DELETE')
-                @csrf
-                <input type="text" class="inputM" placeholder="ID Mobil" name="id">
-                <br>
-                <button type="submit" class="red-botton">Hapus</button>
-            </form>
-            
-        </div>
+        
 
-    </div>
+    <script>
+        function tambah(){
+            document.getElementById('tambah').style.display='block';
+            document.getElementById('ubah').style.display='none';
+            document.getElementById('kurang').style.display='none';
+        }
+
+        function ubah(){
+            document.getElementById('ubah').style.display='block';
+            document.getElementById('tambah').style.display='none';
+            document.getElementById('kurang').style.display='none';
+        }
+
+        function kurang(){
+            document.getElementById('kurang').style.display='block';
+            document.getElementById('tambah').style.display='none';
+            document.getElementById('ubah').style.display='none';
+        }
+    </script>
 </body>
 </html>
