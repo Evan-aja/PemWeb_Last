@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
-use Session;
 use Exception;
-use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
