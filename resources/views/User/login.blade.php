@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="row">
-    <div class="col s12 m12 l6">
+    <div class="col s6 m6 l6">
       <div class="masuk_text">
         <h3>Masuk</h3>
         <form method="POST" action="{{route('sessStore')}}">
@@ -35,7 +35,7 @@
         </p>
       </div>
     </div>
-    <div class="col s12 m12 l6">
+    <div class="col s6 m6 l6">
       <div class="image_alun">
         <div class="image_text">
           <h3>Butuh Mobil Di Malang?</h3>
