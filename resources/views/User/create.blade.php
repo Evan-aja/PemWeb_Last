@@ -17,7 +17,7 @@
         <script>alert('Data yang anda masukkan telah digunakan')</script>
     @endif
     <div class="row">
-        <div class="col s12 m12 l6">
+        <div class="col s6 m6 l6">
           <div class="masuk_text">
               <h3>Daftar</h3>
               <form method="POST" action="{{ route('regsStore') }}">
@@ -50,7 +50,7 @@
           </div>
         </div>
 
-        <div class="col s12 m12 l6">
+        <div class="col s6 m6 l6">
           <div class="image_alun">
               <div class="image_text">
                   <h3>Butuh Mobil Di Malang?</h3>

@@ -77,3 +77,14 @@
 .tombolsubmit{
     cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+    .nav-others{
+        /* position: relative; */
+        margin-left: 10% !important;
+    }
+
+    .keluar{
+        margin-left: 80%;
+    }
+}
