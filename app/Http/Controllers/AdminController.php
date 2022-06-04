@@ -19,6 +19,7 @@ class AdminController extends Controller
             }
             return redirect(route('dashboard'));
         }
+        return redirect(route('dashboard'));
     }
     public function carmgmt(){
         if(auth()->check()){
@@ -30,6 +31,7 @@ class AdminController extends Controller
             }
             return redirect(route('dashboard'));
         }
+        return redirect(route('dashboard'));
     }
     public function caradd(Request $request){
         if(auth()->check()){
@@ -87,7 +89,6 @@ class AdminController extends Controller
                 if($request->get('jumlah')!=null){
                     $query->jumlah=$request->get('jumlah');
                 }
-                // Car::find($request->get('id'))->update($query);
                 $query->save();
                 return redirect()->to(route('adminCreateMobil'));
             }
