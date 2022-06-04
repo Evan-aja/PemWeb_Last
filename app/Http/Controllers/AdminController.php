@@ -65,10 +65,32 @@ class AdminController extends Controller
         }
         return Redirect::route('dashboard');
     }
-    public function carget(Request $request){
-        return response()->json(array('msg'=>DB::table('cars')->where('id','=',$request->get('id'))->get()),200);
-    }
     public function carup(Request $request){
-
+        if(auth()->check()){
+            if(ProfileController::admincheck()){
+                $this->validate(request(),[
+                    'id'=>'required'
+                ]);
+                $query=Car::find($request->get('id'));
+                if($request->get('nama')!=null){
+                    $query->nama=$request->get('nama');
+                }
+                if($request->get('mesin')!=null){
+                    $query->mesin=$request->get('mesin');
+                }
+                if($request->get('foto')!=null){
+                    $query->foto=$request->get('foto');
+                }
+                if($request->get('harga')!=null){
+                    $query->harga=$request->get('harga');
+                }
+                if($request->get('jumlah')!=null){
+                    $query->jumlah=$request->get('jumlah');
+                }
+                // Car::find($request->get('id'))->update($query);
+                $query->save();
+                return redirect()->to(route('adminCreateMobil'));
+            }
+        }
     }
 }

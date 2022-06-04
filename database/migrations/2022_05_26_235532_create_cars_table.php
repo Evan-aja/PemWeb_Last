@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nama',50);
             $table->string('foto',500);
-            $table->string('mesin',15);
+            $table->integer('mesin',false,true);
             $table->integer('harga',false,true);
             $table->integer('jumlah',false,true);
         });
