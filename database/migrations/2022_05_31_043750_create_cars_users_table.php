@@ -22,6 +22,8 @@ return new class extends Migration
             $table->boolean('konfirmasi')->default(false);
             $table->string('foto_bukti');
             $table->boolean('lunas')->default(false);
+            $table->boolean('selesai')->default(false);
+            $table->boolean('batal')->default(false);
             $table->foreignId('car_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
