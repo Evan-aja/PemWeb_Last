@@ -17,7 +17,7 @@
     @endphp
 
         @if(auth()->check())
-            <p>Hello, {{ auth()->user()->nama }}</p>
+            {{-- <p>Hello, {{ auth()->user()->nama }}</p> --}}
             <h1>Pilih Mobil Kesukaanmu</h1>
             <div class="item">
                 @foreach ($mobil as $mobil)

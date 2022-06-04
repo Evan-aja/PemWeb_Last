@@ -5,7 +5,7 @@
     padding: 0 ;
 }
 .nav{
-    z-index: 9;
+    z-index: 999;
     padding-top: 1% !important;
     padding-left: 4% !important;
     padding-bottom: 1% !important;
