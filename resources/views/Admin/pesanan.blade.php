@@ -10,18 +10,18 @@
     <title>Pesanan</title>
 </head>
 <body>
-@php
+    @php
         use \App\Http\Controllers\SessionController;
         echo SessionController::navbar();
     @endphp
 
-    
+
 
     <div class="status">
     <h2 style="margin-top: 10vh; font-size:2vw; color:#7969E8;">Pesanan</h2>
         <div class="waitConfirm">
             <h3 style="margin-top: 8vh; color:#7969E8;">Status - Menunggu Konfirmasi</h3>
-            <table>
+            <table style="width: 90%;">
                 <tr>
                     <th>ID Pesanan</th>
                     <th>Mobil</th>
@@ -30,69 +30,69 @@
                     <th>Pengembalian</th>
                     <th>Action</th>
                 </tr>
-                <tr>
-                    <form action="" >
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
-                        <td>
-                            <button class="prim-button">Konfirmasi</button>
-                            <button class="red-button">Batal</button>
-                        </td>
-                    </form>
-                </tr>
-                <tr>
-                    <form action="" >
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
-                        <td>
-                            <button class="prim-button">Konfirmasi</button>
-                            <button class="red-button">Batal</button>
-                        </td>
-                    </form>
-                </tr>
+                @foreach($orders as $order)
+                    @if(!$order->konfirmasi)
+                        <tr>
+                            <form action="{{route('adminEditPesanan')}}" method="POST">
+                                @csrf
+{{--                                <td style="width: 8%;">{{$order->id}}</td>--}}
+                                <td style="width: 8%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
+                                <td style="width: 18%;">{{$cars->find($order->car_id)->nama}}</td>
+                                <td style="width: 22%;">Rp. {{$order->harga}}</td>
+                                <td style="width: 16%;">{{$order->peminjaman}}</td>
+                                <td style="width: 16%;">{{$order->pengembalian}}</td>
+                                <td style="width: 20%;">
+                                    <input type="submit" name="submit" class="prim-button" value="Konfirmasi">
+                                    <input type="submit" name="submit" class="red-button" value="Batal">
+                                </td>
+                            </form>
+                        </tr>
+                    @endif
+                @endforeach
             </table>
-        
-    
+
+
         </div>
-       
+
         <div class="waitPayment">
             <h3 style="margin-top: 10vh; color:#7969E8;">Status - Menunggu Pembayaran</h3>
-            <table>
+            <table style="width:90%">
                 <tr>
                     <th>ID Pesanan</th>
                     <th>Mobil</th>
                     <th>Harga</th>
                     <th>Pengambilan</th>
                     <th>Pengembalian</th>
+                    <th>Action</th>
                 </tr>
-                <tr>
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
-                </tr>
-                <tr>
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
-                </tr>
+                @foreach($orders as $order)
+                    @if($order->konfirmasi)
+                        @if(!$order->lunas)
+                            <tr>
+                                <form action="{{route('adminEditPesanan')}}" method="POST">
+                                    @csrf
+{{--                                    <td style="width: 8%;" name="id">{{$order->id}}</td>--}}
+                                    <td style="width: 8%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
+                                    <td style="width: 18%;">{{$cars->find($order->car_id)->nama}}</td>
+                                    <td style="width: 22%;">Rp. {{$order->harga}}</td>
+                                    <td style="width: 16%;">{{$order->peminjaman}}</td>
+                                    <td style="width: 16%;">{{$order->pengembalian}}</td>
+                                    <td style="width: 20%;">
+                                        <input type="submit" name="submit" class="red-button" value="Batal">
+                                    </td>
+                                </form>
+                            </tr>
+                        @endif
+                    @endif
+                @endforeach
             </table>
-        
-    
+
+
         </div>
 
         <div class="paid">
             <h3 style="margin-top: 10vh; color:#7969E8;">Status - Sudah Dibayar</h3>
-            <table>
+            <table style="width: 90%;">
                 <tr>
                     <th>ID Pesanan</th>
                     <th>Mobil</th>
@@ -101,40 +101,36 @@
                     <th>Pengembalian</th>
                     <th>Action</th>
                 </tr>
-                <tr>
-                    <form action="" >
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
-                        <td>
-                            <button class="prim-button">Konfirmasi</button>
-                            <button class="sec-button">Lihat Foto</button>
-                        </td>
-                    </form>
-                </tr>
-                <tr>
-                    <form action="" >
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
-                        <td>
-                            <button class="prim-button">Konfirmasi</button>
-                            <button class="sec-button">Lihat Foto</button>
-                        </td>
-                    </form>
-                </tr>
+                @foreach($orders as $order)
+                    @if($order->konfirmasi)
+                        @if($order->lunas)
+                            @if(!$order->selesai)
+                                <tr>
+                                    <form action="{{route('adminEditPesanan')}}" method="POST">
+                                        @csrf
+{{--                                        <td style="width: 8%;">{{$order->id}}</td>--}}
+                                        <td style="width: 8%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
+                                        <td style="width: 18%;">{{$cars->find($order->car_id)->nama}}</td>
+                                        <td style="width: 22%;">Rp. {{$order->harga}}</td>
+                                        <td style="width: 16%;">{{$order->peminjaman}}</td>
+                                        <td style="width: 16%;">{{$order->pengembalian}}</td>
+                                        <td style="width: 20%;">
+                                            <input type="submit" name="submits" class="prim-button" value="Konfirmasi">
+                                            <a href="{{$order->foto_bukti}}" target="_blank" style="text-decoration: none;"><span class="sec-button">Lihat Foto</span></a>
+                                            <input type="submit" name="submit" class="red-button" value="Batal">
+                                        </td>
+                                    </form>
+                                </tr>
+                            @endif
+                        @endif
+                    @endif
+                @endforeach
             </table>
-        
-    
         </div>
 
         <div class="finish">
             <h3 style="margin-top: 10vh; color:#7969E8;">Status - Selesai</h3>
-            <table style="margin-bottom: 10vh;">
+            <table style="margin-bottom: 10vh; width: 90%;">
                 <tr>
                     <th>ID Pesanan</th>
                     <th>Mobil</th>
@@ -143,33 +139,29 @@
                     <th>Pengembalian</th>
                     <th>Action</th>
                 </tr>
-                <tr>
-                    <form action="" >
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
-                        <td>
-                            <button class="sec-button">Lihat Foto</button>
-                        </td>
-                    </form>
-                </tr>
-                <tr>
-                    <form action="" >
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
-                        <td>
-                            <button class="sec-button">Lihat Foto</button>
-                        </td>
-                    </form>
-                </tr>
+                @foreach($orders as $order)
+                    @if($order->konfirmasi)
+                        @if($order->lunas)
+                            @if($order->selesai)
+                                <tr>
+                                    <form action="{{route('adminEditPesanan')}}" method="POST">
+                                        @csrf
+{{--                                        <td style="width: 8%;">{{$order->id}}</td>--}}
+                                        <td style="width: 8%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
+                                        <td style="width: 18%;">{{$cars->find($order->car_id)->nama}}</td>
+                                        <td style="width: 22%;">Rp. {{$order->harga}}</td>
+                                        <td style="width: 16%;">{{$order->peminjaman}}</td>
+                                        <td style="width: 16%;">{{$order->pengembalian}}</td>
+                                        <td style="width: 20%;">
+                                            <a href="{{$order->foto_bukti}}" target="_blank" style="text-decoration: none;"><span class="sec-button">Lihat Foto</span></a>
+                                        </td>
+                                    </form>
+                                </tr>
+                            @endif
+                        @endif
+                    @endif
+                @endforeach
             </table>
-        
-    
         </div>
     </div>
 </body>
