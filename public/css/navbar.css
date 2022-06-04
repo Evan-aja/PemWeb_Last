@@ -6,7 +6,7 @@
 }
 
 .nav{
-    z-index: 9;
+    z-index: 999;
     padding-top: 1% !important;
     padding-left: 4% !important;
     padding-bottom: 1% !important;
@@ -17,6 +17,7 @@
     box-shadow: 0 4px 6px -6px #222;
     top: 0%;
     position: sticky;
+    background-color: white;
 }
 
 .red{
@@ -86,10 +87,6 @@
 @media only screen and (max-width: 600px) {
     .nav-others{
         /* position: relative; */
-        margin-left: 10% !important;
-    }
-
-    .keluar{
-        margin-left: 80%;
+        margin-left: 9% !important;
     }
 }

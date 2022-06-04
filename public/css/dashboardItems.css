@@ -87,3 +87,14 @@ h1{
     font-weight: bolder;
 }
 
+@media only screen and (max-width: 600px) {
+    h1{
+        font-size: 2.5rem;
+    }
+    .item{
+        width: 80%;
+        margin-top: 15px !important;
+        margin-left: 20% !important;
+        /* overflow-y: auto; */
+    }
+}
