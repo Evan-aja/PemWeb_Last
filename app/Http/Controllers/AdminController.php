@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\CarsUsers;
+use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Ramsey\Uuid\Type\Integer;
 
 class AdminController extends Controller
 {
@@ -17,19 +20,19 @@ class AdminController extends Controller
             }else{
                 return redirect(route('dashboard'));
             }
-            return redirect(route('dashboard'));
         }
+        return Redirect::route('dashboard');
     }
     public function carmgmt(){
         if(auth()->check()){
             if(ProfileController::admincheck()){
-                $cars=CarController::queryAll();
+                $cars=Car::all();
                 return view('Admin.aturMobil',['cars'=>$cars]);
             }else{
                 return redirect(route('dashboard'));
             }
-            return redirect(route('dashboard'));
         }
+        return Redirect::route('dashboard');
     }
     public function caradd(Request $request){
         if(auth()->check()){
@@ -49,6 +52,7 @@ class AdminController extends Controller
                 }
             }
         }
+        return Redirect::route('dashboard');
     }
     public function cardel(Request $request){
         if(auth()->check()){
@@ -61,7 +65,6 @@ class AdminController extends Controller
             }else{
                 return Redirect::route('dashboard');
             }
-            return Redirect::route('dashboard');
         }
         return Redirect::route('dashboard');
     }
@@ -87,10 +90,75 @@ class AdminController extends Controller
                 if($request->get('jumlah')!=null){
                     $query->jumlah=$request->get('jumlah');
                 }
-                // Car::find($request->get('id'))->update($query);
                 $query->save();
                 return redirect()->to(route('adminCreateMobil'));
             }
         }
+        return Redirect::route('dashboard');
     }
+    public function ordermgmt(){
+        if(auth()->check()){
+            if(ProfileController::admincheck()){
+                $orders=CarsUsers::all();
+                $cars=Car::all();
+                return view('Admin.pesanan',['orders'=>$orders,'cars'=>$cars,'users'=>$users]);
+            }else{
+                return redirect(route('dashboard'));
+            }
+        }
+        return Redirect::route('dashboard');
+    }
+    public function orderorder(Request $request): \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application
+    {
+        if(auth()->check()){
+            if(ProfileController::admincheck()){
+                if($request->get('submit')=="Konfirmasi"){
+                    $this->ordercfrm((int)$request->get('id'));
+                }else if($request->get('submit')=="Batal"){
+                    $this->ordercncl((int)$request->get('id'));
+                }else if($request->get('submits')=="Konfirmasi"){
+                    $this->orderdone((int)$request->get('id'));
+                }
+                return redirect()->to(route('adminCreatePesanan'));
+            }else{
+                return redirect(route('dashboard'));
+            }
+        }
+        return Redirect::route('dashboard');
+    }
+    public function ordercfrm(int $id){
+        $orders=CarsUsers::find($id);
+        $orders->konfirmasi=true;
+        $orders->save();
+    }
+    public function ordercncl(int $id){
+        $orders=CarsUsers::find($id);
+        $orders->delete();
+    }
+    public function orderdone(int $id){
+        $orders=CarsUsers::find($id);
+        $orders->selesai=true;
+        $orders->save();
+    }
+//    public function cekmgmt(){
+//        if(auth()->check()){
+//            if(ProfileController::admincheck()){
+//                return view('Admin.cekid');
+//            }else{
+//                return redirect(route('dashboard'));
+//            }
+//        }
+//        return Redirect::route('dashboard');
+//    }
+//    public function cekorder(Request $request){
+//        if(auth()->check()){
+//            if(ProfileController::admincheck()){
+//                $query=CarsUsers::find($request->get('id'));
+//                return response()->json([$query]);
+//            }else{
+//                return redirect(route('dashboard'));
+//            }
+//        }
+//        return Redirect::route('dashboard');
+//    }
 }

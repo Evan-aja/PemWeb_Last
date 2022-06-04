@@ -20,8 +20,8 @@
     <h1>Selamat Datang Admin!</h1>
     <br>
         <a class="tombol " href="{{route('adminCreateMobil')}}">Mobil</a>
-        <a class="tombol t" href="{{route('pesanan')}}">Pesanan</a>
-        <a class="tombol t" href="{{route('cekid')}}">Cek ID Pesanan</a>
+        <a class="tombol t" href="{{route('adminCreatePesanan')}}">Pesanan</a>
+{{--        <a class="tombol t" href="{{route('adminCreateCek')}}">Cek ID Pesanan</a>--}}
     </div>
 
 

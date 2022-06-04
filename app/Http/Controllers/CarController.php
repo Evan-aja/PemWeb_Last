@@ -9,8 +9,4 @@ class CarController extends Controller
     public function create(){
 
     }
-    public static function queryAll(){
-        $result=Car::all();
-        return $result;
-    }
 }

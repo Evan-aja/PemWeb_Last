@@ -15,14 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[\App\Http\Controllers\Controller::class,'create'])->name('dashboard');
 
-Route::get('/cekid', function () {
-    return view('Admin.cekid');
-})->name('cekid');
-
-Route::get('/pesanan', function () {
-    return view('Admin.pesanan');
-})->name('pesanan');
-
 Route::get('/formulir', function () {
     return view('Penyewaan.formulir');
 })->name('formulir');
@@ -51,11 +43,18 @@ Route::prefix('/admin')->group(function () {
         Route::delete('/',[\App\Http\Controllers\AdminController::class,'cardel'])->name('adminDelMobil');
         Route::post('/',[\App\Http\Controllers\AdminController::class,'caradd'])->name('adminAddMobil');
     });
+    Route::prefix('/pesanan')->group(function(){
+        Route::get('/',[\App\Http\Controllers\AdminController::class,'ordermgmt'])->name('adminCreatePesanan');
+        Route::post('/order',[\App\Http\Controllers\AdminController::class,'orderorder'])->name('adminEditPesanan');
+    });
+    Route::prefix('/cek')->group(function(){
+        Route::get('/',[\App\Http\Controllers\AdminController::class,'cekmgmt'])->name('adminCreateCek');
+        Route::post('/',[\App\Http\Controllers\AdminController::class,'cekorder'])->name('adminPesananCek');
+    });
 });
 
 Route::prefix('/mobil')->group(function () {
     Route::get('/',[\App\Http\Controllers\CarController::class,'create'])->name('carView');
-    Route::get('/{mobil?}',[\App\Http\Controllers\CarController::class,'getcar'])->name('carOne');
     Route::post('/',[\App\Http\Controllers\CarController::class,'store'])->name('carRent');
 });
 
@@ -68,6 +67,5 @@ Route::group(['prefix'=>'user'],function(){
     Route::get('/logout',[\App\Http\Controllers\SessionController::class,'destroy'])->name('sessDestroy');
 
     Route::get('/',[\App\Http\Controllers\ProfileController::class,'create'])->name('profView');
-
     Route::post('/',[\App\Http\Controllers\ProfileController::class,'update'])->name('profUpdate');
 });
