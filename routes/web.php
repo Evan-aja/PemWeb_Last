@@ -47,8 +47,7 @@ Route::prefix('/admin')->group(function () {
     Route::get('/',[\App\Http\Controllers\AdminController::class,'create'])->name('adminCreate');
     Route::prefix('/mobil')->group(function(){
         Route::get('/',[\App\Http\Controllers\AdminController::class,'carmgmt'])->name('adminCreateMobil');
-        Route::get('/carone',[\App\Http\Controllers\AdminController::class,'carget'])->name('adminGetMobil');
-        Route::patch('/carone',[\App\Http\Controllers\AdminController::class,'carup'])->name('adminPatchMobil');
+        Route::patch('/',[\App\Http\Controllers\AdminController::class,'carup'])->name('adminPatchMobil');
         Route::delete('/',[\App\Http\Controllers\AdminController::class,'cardel'])->name('adminDelMobil');
         Route::post('/',[\App\Http\Controllers\AdminController::class,'caradd'])->name('adminAddMobil');
     });

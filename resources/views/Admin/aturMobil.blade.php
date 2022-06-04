@@ -8,20 +8,6 @@
     <link href="{{asset('css/aturMobil.css')}}" rel="stylesheet" type="text/css" />
     <link rel="icon" href="{{asset('image/Untitleddd.png')}}">
     <title>Mobil</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        function getCar($id){
-            $.ajax({
-                type:'GET',
-                url:'{{route('adminGetMobil')}}',
-                data:'id='+$('#idmsg').val()+'&_token=<?php echo csrf_token() ?>',
-                success:function(data){
-                    console.log(data.msg[0]);
-                    $('#msg').html(data.msg[0]);
-                }
-            })
-        }
-    </script>
     <title>Atur Mobil</title>
 </head>
 <body>
@@ -40,31 +26,33 @@
         echo SessionController::navbar();
     @endphp
     <h1>Mobil</h1>
-    <table style="border:1px solid black; ">
+    <table style="border:1px solid black; width: 90%;">
         <tr style="border:1px solid black; ">
             <th>ID Mobil</th>
             <th>Nama</th>
             <th>Kapasitas Mesin</th>
             <th>Harga</th>
             <th>Jumlah Unit</th>
+            <th>Foto</th>
         </tr>
         @foreach ($cars as $i)
         <tr >
             <td class="padding">{{$i->id}}</td>
             <td class="padding">{{$i->nama}}</td>
-            <td class="padding">{{$i->mesin}}</td>
+            <td class="padding">{{$i->mesin}}cc</td>
             <td class="padding">Rp. {{$i->harga}}</td>
             <td class="padding">{{$i->jumlah}}</td>
+            <td class="padding"><a href="{{$i->foto}}" target="_blank">{{$i->foto}}</a></td>
         </tr>
         @endforeach
     </table>
-        
+
         <div class="tombol">
             <button onclick="tambah()" id="plus" class="prim-button">Tambah Mobil</button>
             <button onclick="ubah()" id="edit" class="prim-button">Edit Mobil</button>
             <button onclick="kurang()" id="hapus" class="prim-button">Hapus Mobil</button>
         </div>
-        
+
         <div class="edit">
             <div id="tambah" class="tambah" style="display: none;">
                 <h3>Tambah Mobil</h3>
@@ -72,36 +60,38 @@
                     @csrf
                     <input type="text" class="inputM" placeholder="Nama" name="nama" required>
                     <br>
-                    <input type="text" class="inputM" placeholder="Kapasitas Mesin" name="mesin" required>
+                    <input type="number" class="inputM" placeholder="Kapasitas Mesin" name="mesin" required>
                     <br>
-                    <input type="text" class="inputM" placeholder="Harga" name="harga" required>
+                    <input type="number" class="inputM" placeholder="Harga" name="harga" required>
                     <br>
-                    <input type="text" class="inputM" placeholder="Jumlah Unit" name="jumlah" required>
+                    <input type="number" class="inputM" placeholder="Jumlah Unit" name="jumlah" required>
                     <br>
                     <input type="text" class="inputM" placeholder="Upload Foto" name="foto" required>
                     <br>
                     <button type="submit" class="prim-button">Tambah</button>
                 </form>
-
             </div>
 
             <div id="ubah" class="ubah" style="display: none;">
                 <h3>Edit Mobil</h3>
-                
                 <div id="after">
-                    <input type="text" class="inputM" placeholder="ID Mobil" required>
-                    <br>
-                    <input type="text" class="inputM" placeholder="Nama" >
-                    <br>
-                    <input type="text" class="inputM" placeholder="Kapasitas Mesin" >
-                    <br>
-                    <input type="text" class="inputM" placeholder="Harga" >
-                    <br>
-                    <input type="text" class="inputM" placeholder="Jumlah Unit">
-                    <br>
-                    <input type="text" class="inputM" placeholder="Upload Foto" name="foto" >
-                    <br>
-                    <button class="prim-button" name="edit">Edit</button>
+                    <form method="POST" action="{{route('adminPatchMobil')}}">
+                        @method('PATCH')
+                        @csrf
+                        <input type="text" class="inputM" placeholder="ID Mobil (Wajib)" name="id" required>
+                        <br>
+                        <input type="text" class="inputM" placeholder="Nama" name="nama">
+                        <br>
+                        <input type="number" class="inputM" placeholder="Kapasitas Mesin" name="mesin">
+                        <br>
+                        <input type="number" class="inputM" placeholder="Harga" name="harga">
+                        <br>
+                        <input type="number" class="inputM" placeholder="Jumlah Unit" name="jumlah">
+                        <br>
+                        <input type="text" class="inputM" placeholder="Upload Foto" name="foto">
+                        <br>
+                        <button class="prim-button" name="edit">Edit</button>
+                    </form>
                 </div>
             </div>
 
@@ -110,17 +100,12 @@
                 <form method="POST" action="{{route('adminDelMobil')}}" >
                     @method('DELETE')
                     @csrf
-                    <input type="text" class="inputM" placeholder="ID Mobil" name="id">
+                    <input type="number" class="inputM" placeholder="ID Mobil" name="id">
                     <br>
                     <button type="submit" class="red-botton">Hapus</button>
                 </form>
-                
-
-
             </div>
         </div>
-
-        
 
     <script>
         function tambah(){
