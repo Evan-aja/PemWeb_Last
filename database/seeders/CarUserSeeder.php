@@ -17,7 +17,7 @@ class CarUserSeeder extends Seeder
     public function run()
     {
         $faker=Faker::create('id_ID');
-        for($i=0;$i<5;$i++){
+        for($i=0;$i<30;$i++){
             $iduser=$faker->numberBetween(1,5);
             $idcar=$faker->numberBetween(1,5);
             $datenow=date('Y-m-d H:i:s');
