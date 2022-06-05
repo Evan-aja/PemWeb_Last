@@ -102,7 +102,6 @@ class AdminController extends Controller
                 $orders=CarsUsers::all();
                 $cars=Car::all();
                 return view('Admin.pesanan',['orders'=>$orders,'cars'=>$cars]);
-
             }else{
                 return redirect(route('dashboard'));
             }
