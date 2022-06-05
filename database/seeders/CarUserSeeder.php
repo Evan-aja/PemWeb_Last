@@ -26,13 +26,23 @@ class CarUserSeeder extends Seeder
             date_add($datelater,date_interval_create_from_date_string("$days Days"));
             $datelater=date_format($datelater,'Y-m-d H:i:s');
             $harga=DB::table('cars')->where('id','=',$idcar)->pluck('harga');
+            $konfirm=$faker->boolean;
+            $lunas=false;
+            $selesai=false;
+            if($konfirm){
+                $lunas=$faker->boolean;
+                if($lunas){
+                    $selesai=$faker->boolean;
+                }
+            }
             DB::table('cars_users')->insert([
                 'peminjaman'=>$datenow,
                 'pengembalian'=>$datelater,
                 'harga'=>(int)$harga[0]*((abs(strtotime($datenow)-strtotime($datelater)))/86400),
-                'konfirmasi'=>false,
+                'konfirmasi'=>$konfirm,
                 'foto_bukti'=>$faker->url(),
-                'lunas'=>false,
+                'lunas'=>$lunas,
+                'selesai'=>$selesai,
                 'car_id'=>$idcar,
                 'user_id'=>$iduser,
                 'created_at'=>$datenow,
