@@ -101,7 +101,7 @@ class AdminController extends Controller
             if(ProfileController::admincheck()){
                 $orders=CarsUsers::all();
                 $cars=Car::all();
-                return view('Admin.pesanan',['orders'=>$orders,'cars'=>$cars,'users'=>$users]);
+                return view('Admin.pesanan',['orders'=>$orders,'cars'=>$cars]);
             }else{
                 return redirect(route('dashboard'));
             }
