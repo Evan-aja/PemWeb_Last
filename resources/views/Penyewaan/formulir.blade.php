@@ -15,9 +15,9 @@
         echo SessionController::navbar();
     @endphp
 
-    
 
-    <form action="{{route('waiting')}}">
+
+    <form action="">
         <h2>Detail Penyewaan</h2>
         <p style="margin-bottom:15px;">Mobil : {(Toyota Avanza)}</p>
         <input class="inputM browser-default" type="date" placeholder="Tanggal Pengambilan" name="pengambilan">

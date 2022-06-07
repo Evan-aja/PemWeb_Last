@@ -18,13 +18,13 @@
     <div class="isi">
         <img src="{{asset('image/Wavy_Bus-12_Single-12.jpg')}}" alt="">
 
-        <p style="color:#7969E8;">ID Pesanan #{(1234)} </p>
+        <p style="color:#7969E8;">ID Pesanan {{$pesan}}</p>
         <h2>Menunggu Konfirmasi</h2>
         <p style="margin-bottom: 5vh;">Mobil pesanan Anda sedang diperiksa <br>Anda dapat mengecek kembali pesanan Anda melalui <b>Menu Riwayat</b> </p>
-        
-        <a href="{{route('riwayat')}}">
+
+        <a href="{{route('userCreateHist')}}">
             <button class="prim-button">Buka Menu Riwayat</button>
-        </a>    
+        </a>
     </div>
 
     </body>
