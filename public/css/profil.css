@@ -2,9 +2,12 @@ table{
     width: 50% !important;
 }
 
+
 .label{
     padding-right: 2vw;
     width: 30% !important;
+    border-radius: 5px !important;
+    
 }
 
 .inputProfile
@@ -14,9 +17,10 @@ table{
     width: 20vw ;
     height: 5vh  ;
     box-sizing: border-box ;
-    border-radius: 6.5px ;
     outline: none ;
     padding: 10px 10px 10px 10px  ;
+    border-radius: 5px !important;
+
 }
 
 .input{
@@ -32,7 +36,7 @@ input:focus{
 }
 
 .profil{
-    margin-left: 8.8vw;
+    margin-left: 14vw;
     width: 10vw;
     cursor: pointer;
 }
@@ -50,3 +54,16 @@ h1{
 .ubahProfile{
     background-color: rgb(204, 204, 204);
 }
+
+
+@media only screen and (max-width: 600px) {
+    table{
+        width: 70% !important;
+    }
+
+    .profil{
+        margin-left: 18vw;
+        width: 10vw;
+        cursor: pointer;
+    }
+  }
