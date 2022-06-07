@@ -18,7 +18,34 @@ class UserSeeder extends Seeder
     public function run()
     {
         $faker=Faker::create('id_ID');
-        for($i=0;$i<5;$i++){
+        DB::table('users')->insert([
+            'nama'=>"Gabrielle Evan Farrel",
+            'nik'=>"2051",
+            'password'=>Hash::make("123"),
+            'telepon'=>"081913910239",
+            'kota_asal'=>$faker->city(),
+            'created_at'=>date('Y-m-d H:i:s'),
+            'updated_at'=>date('Y-m-d H:i:s')
+        ]);
+        DB::table('users')->insert([
+            'nama'=>"Miftahul Ihsan",
+            'nik'=>"5020",
+            'password'=>Hash::make("123"),
+            'telepon'=>"085215168475",
+            'kota_asal'=>$faker->city(),
+            'created_at'=>date('Y-m-d H:i:s'),
+            'updated_at'=>date('Y-m-d H:i:s')
+        ]);
+        DB::table('users')->insert([
+            'nama'=>"Al'Ravie Mutiar Mahesa",
+            'nik'=>"1111",
+            'password'=>Hash::make("123"),
+            'telepon'=>"081310887676",
+            'kota_asal'=>$faker->city(),
+            'created_at'=>date('Y-m-d H:i:s'),
+            'updated_at'=>date('Y-m-d H:i:s')
+        ]);
+        for($i=0;$i<2;$i++){
             DB::table('users')->insert([
                 'nama'=>$faker->name(),
                 'nik'=>$faker->numberBetween(200000000000000,240000000000000),
