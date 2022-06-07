@@ -35,18 +35,4 @@ h3{
     .image_alun{
         background-position-x: 50%;
     }
-    .masuk_text{
-        position: relative;
-        top: 22vh;
-        left: 4vh;
-    }
-    
-    .masuk_text h3{
-        color: #6354C8;
-        margin-bottom: 30px !important;
-        font-weight: bold;
-    }
-    .belum_memiliki_akun{
-        font-size: small;
-    }
 }
