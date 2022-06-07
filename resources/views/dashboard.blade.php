@@ -22,7 +22,7 @@
             <div class="item">
                 @foreach ($mobil as $mobil)
                 <a href="{{route('formulir')}} ">
-                    <div class='card'>
+                    <div class='cards'>
                         <img src="{{$mobil['foto']}}"/>
                         <div class='card-title'>
                             <p>Sisa {{$mobil['jumlah']}}</p>
@@ -40,7 +40,6 @@
                 </a>
                 
                 @endforeach
-
             </div>
         @else
             <p>Hello, Stranger</p>

@@ -31,8 +31,8 @@
             <li>Pembayaran selesai</li>
         </ol>
         
-        <form action="">
-        <input type="file" class="custom-file-input" accept="image/png, image/jpg, image/gif, image/jpeg"><br>
+        <form action="" class="browser-default">
+        <input type="file" class="custom-file-input browser-default" accept="image/png, image/jpg, image/gif, image/jpeg"><br>
                 <button class="prim-button">Upload</button>
         </form>
     </div>

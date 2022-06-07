@@ -1,3 +1,13 @@
+table{
+    border: 1px solid black !important;
+    width: 90% !important;
+    margin-bottom: 100px !important;
+}
+
+table th, table td{
+    border: 1px solid black !important;
+}
+
 h2{ font-size:30px; color:#7969E8; margin-bottom: 5vh;
 }
 
