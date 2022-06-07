@@ -18,77 +18,85 @@
     <div class="isi">
         <h2>Riwayat</h2>
 
-        <table>
+        <table style="width: 90%;">
                 <tr>
-                    <th>ID Pesanan</th>
-                    <th>Mobil</th>
-                    <th>Harga</th>
-                    <th>Pengambilan</th>
-                    <th>Pengembalian</th>
-                    <th>Status</th>
+                    <th style="width: 5%">ID Pesanan</th>
+                    <th style="width: 30%">Mobil</th>
+                    <th style="width: 15%">Harga</th>
+                    <th style="width: 15%">Pengambilan</th>
+                    <th style="width: 15%">Pengembalian</th>
+                    <th style="width: 20%">Status</th>
                 </tr>
-
-                <tr class="padding selesai">
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
+            @foreach($trans as $tran)
+                @if($tran->konfirmasi & $tran->lunas & $tran->selesai & !$tran->batal)
+                    <tr class="padding selesai">
+                        <td><input name="id" style="text-align: center" value="{{$tran->id}}" readonly></td>
+                        <td>{{$cars->find($tran->car_id)->nama}}</td>
+                        <td>{{$tran->harga}}</td>
+                        <td>{{$tran->peminjaman}}</td>
+                        <td>{{$tran->pengembalian}}</td>
                         <td>
-                            <p><b>Selesai</b> </p>
+                            <p style="width: 90%"><b>Selesai</b></p>
                         </td>
-                </tr>
-
-                <tr class="padding pembayaranBerhasil">
-                    <form action="{{route('berhasil')}}" >
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
+                    </tr>
+                @elseif($tran->konfirmasi & $tran->lunas & !$tran->selesai & !$tran->batal)
+                    <tr class="padding pembayaranBerhasil">
+                        <form action="{{route('userHistHist')}}" method="POST">
+                            @csrf
+                            <td><input name="id" style="text-align: center" value="{{$tran->id}}" readonly></td>
+                            <td>{{$cars->find($tran->car_id)->nama}}</td>
+                            <td>{{$tran->harga}}</td>
+                            <td>{{$tran->peminjaman}}</td>
+                            <td>{{$tran->pengembalian}}</td>
+                            <td>
+                                <input type="submit" name="submit" class="prim-button" style="width: 60%" value="Pembayaran Berhasil">
+                            </td>
+                        </form>
+                    </tr>
+                @elseif($tran->konfirmasi & !$tran->lunas & !$tran->selesai & !$tran->batal)
+                    <tr class="padding menungguPembayaran">
+                        <form action="{{route('userHistHist')}}" method="POST">
+                            @csrf
+                            <td><input name="id" style="text-align: center" value="{{$tran->id}}" readonly></td>
+                            <td>{{$cars->find($tran->car_id)->nama}}</td>
+                            <td>{{$tran->harga}}</td>
+                            <td>{{$tran->peminjaman}}</td>
+                            <td>{{$tran->pengembalian}}</td>
+                            <td>
+                                <input type="submit" name="submit" class="prim-button" style="width: 60%" value="Bayar">
+                                <input type="submit" name="submit" class="red-button" style="width: 30%" value="Batal">
+                            </td>
+                        </form>
+                    </tr>
+                @elseif(!$tran->konfirmasi & !$tran->lunas & !$tran->selesai & !$tran->batal)
+                    <tr class="padding menungguKonfirmasi">
+                        <form action="{{route('userHistHist')}}" method="POST">
+                            @csrf
+                            <td><input name="id" style="text-align: center" value="{{$tran->id}}" readonly></td>
+                            <td>{{$cars->find($tran->car_id)->nama}}</td>
+                            <td>{{$tran->harga}}</td>
+                            <td>{{$tran->peminjaman}}</td>
+                            <td>{{$tran->pengembalian}}</td>
+                            <td>
+                                <input type="submit" name="submit" class="prim-button" style="width: 60%" value="Menunggu Konfirmasi">
+                                <input type="submit" name="submit" class="red-button" style="width: 30%" value="Batal">
+                            </td>
+                        </form>
+                    </tr>
+                @elseif($tran->batal)
+                    <tr class="padding dibatalkan">
+                        <td><input name="id" style="text-align: center" value="{{$tran->id}}" readonly></td>
+                        <td>{{$cars->find($tran->car_id)->nama}}</td>
+                        <td>{{$tran->harga}}</td>
+                        <td>{{$tran->peminjaman}}</td>
+                        <td>{{$tran->pengembalian}}</td>
                         <td>
-                            <button class="prim-button">Pembayaran Berhasil</button>
+                            <p style="color: #bf1b1b;" style="width: 90%"><b>Dibatalkan</b> </p>
                         </td>
-                    </form>
-                </tr>
-                <tr class="padding menungguPembayaran">
-                    <form action="{{route('pembayaran')}}" >
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
-                        <td>
-                            <button class="prim-button">Menunggu Pembayaran</button>
-                        </td>
-                    </form>
-                </tr>
-
-                <tr class="padding menungguKonfirmasi">
-                    <form action="{{route('waiting')}}" >
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
-                        <td>
-                            <button class="prim-button">Menunggu Konfirmasi</button>
-                        </td>
-                    </form>
-                </tr>
-
-                <tr class="padding dibatalkan">
-                        <td>1234</td>
-                        <td>Toyota Avanza</td>
-                        <td>Rp. 300.000</td>
-                        <td>12/01/2022</td>
-                        <td>13/01/2022</td>
-                        <td>
-                            <p style="color: #bf1b1b;"><b>Dibatalkan</b> </p>
-                        </td>
-                </tr>
+                    </tr>
+                @endif
+            @endforeach
             </table>
     </div>
-    
 </body>
 </html>
