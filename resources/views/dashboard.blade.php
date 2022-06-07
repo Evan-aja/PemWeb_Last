@@ -21,9 +21,14 @@
             <h1>Pilih Mobil Kesukaanmu</h1>
             <div class="item">
                 @foreach ($mobil as $mobil)
-                <a href="{{route('formulir')}} ">
+                <form action="{{route('formulir')}}" method="GET">
+                    
                     <div class='cards'>
-                        <img src="{{$mobil['foto']}}"/>
+                    <img src="{{$mobil['foto']}}" class="gambarr"/>
+                    <input type="submit" value="AAAAAA" class="kartuMobil">
+
+                    <input name="id" style="display: none;" value="{{$mobil['id']}}" readonly>
+                        
                         <div class='card-title'>
                             <p>Sisa {{$mobil['jumlah']}}</p>
                         </div>
@@ -36,8 +41,9 @@
                         <div class='card-car-price'>
                             <p>{{$mobil['harga']}} <span class='price-hari'>/hari</span></p>
                         </div>
+                       
                     </div>
-                </a>
+                </form>
                 
                 @endforeach
 

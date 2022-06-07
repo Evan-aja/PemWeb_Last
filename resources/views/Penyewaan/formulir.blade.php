@@ -19,14 +19,14 @@
 
     <form action="">
         <h2>Detail Penyewaan</h2>
-        <p style="margin-bottom:15px;">Mobil : {(Toyota Avanza)}</p>
+        <p style="margin-bottom:15px;">Mobil : {{$mobil->nama}}</p>
         <input class="inputM browser-default" type="date" placeholder="Tanggal Pengambilan" name="pengambilan">
         <br>
         <input class="inputM browser-default" type="date" placeholder="Tanggal Pengembalian" name="pengembalian">
 
         <p style="font-size: 11px; font-weight:bold; margin-bottom:30px;margin-top:5px;">*Tanggal Peminjaman dan Pengembalian <br>ditulis dengan format dd/mm/yyyy</p>
 
-        <p style="margin-bottom:15px ;">Harga Penyewaan : Rp. {(300.000)} x {(4)} hari = Rp . {(1.200.000)} </p>
+        <p style="margin-bottom:15px ;">Harga Penyewaan : Rp. {{$mobil->harga}} x {(4)} hari = Rp . {(1.200.000)} </p>
         <button class="prim-button">Kirim</button>
     </form>
 
