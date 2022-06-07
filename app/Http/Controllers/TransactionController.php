@@ -40,8 +40,9 @@ class TransactionController extends Controller
         $pays->lunas=true;
         $pays->save();
         return view('Penyewaan.pembayaran', ['pesan' => $request->get('id')]);
-    }
-    public function formmgmt(){
-        return view('Penyewaan.formulir');
+    }   
+    public function formmgmt(Request $request){
+        $cars=Car::find($request->get("id"));
+        return view('Penyewaan.formulir',['mobil'=>$cars]);
     }
 }
