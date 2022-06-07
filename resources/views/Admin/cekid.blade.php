@@ -18,7 +18,7 @@
 
     <div class="edit">
         <h2 style="margin-top: 10vh; font-size:2vw; color:#7969E8;">Cek ID Pesanan</h2>
-        <form action="" method="post">
+        <form action="" method="post" class="browser-default">
             <input type="text" class="inputM" placeholder="ID Pesanan" name="id" required style="margin-top:3vh;">
             <br>
             <button onclick="cek()" class="prim-botton" type="submit" style=" padding: 5px 30px;">Cek</button>
@@ -27,7 +27,7 @@
 
     <div id="hasil" style=" display: block;">
         <h2 style="margin-top: 5vh; font-size:2vw; color:#7969E8; margin-left: 5vw;" >ID Pesanan : 1232131</h2>
-        <table style="margin-left: 4.1vw;">
+        <table style="margin-left: 4.1vw;" class="browser-default">
             <tr>
                 <td class="label">Nama</td>
                 <td>: Miftahul Ihsan</td>

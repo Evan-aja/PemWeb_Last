@@ -1,5 +1,13 @@
-.label{
-    padding-right: 2vw;
+table{
+    border: 1px solid black !important;
+    width: 50% !important;
+}
+
+table th, table td{
+    border: 1px solid black !important;
+}
+ .label{
+    width: 30% !important;
 }
 
 .inputProfile
@@ -8,10 +16,12 @@
     border: 2px solid #7969E8 ;
     width: 20vw ;
     height: 5vh  ;
+    margin-left: -200px !important;
     box-sizing: border-box ;
-    border-radius: 6.5px ;
+    /* border-radius: 6.5px ; */
     outline: none ;
     padding: 10px 10px 10px 10px  ;
+    /* width: 30% !important; */
 }
 
 .input{
