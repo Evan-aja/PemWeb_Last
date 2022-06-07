@@ -5,11 +5,15 @@
     padding: 0 ;
 }
 
+.menu{
+    color: black;
+}
+
 .nav{
     z-index: 999;
-    padding-top: 1% !important;
+    /* padding-top: 1% !important;
     padding-left: 4% !important;
-    padding-bottom: 1% !important;
+    padding-bottom: 1% !important; */
     color: #7969E8;
     border-bottom: 1px solid rgba(24, 24, 24,.40) !important;
     -webkit-box-shadow: 0 4px 6px -6px #222;
@@ -20,43 +24,55 @@
     background-color: white;
 }
 
-.red{
+.ungu{
+    color: #A99DFF !important;
+}
+
+.sred{
     color: #A99DFF;
 }
 
-.logo{
+.brand-logo{
+    padding-left: 3% !important;
+    color: #7969E8 !important;
     font-size: 2rem !important;
     font-weight: bolder;
 }
 
-.nav-others{
+/* .nav-others{
     display: inline !important;
     font-size: 1.3em !important;
     margin-left: 55% !important;
     word-spacing: 15px;
-}
+} */
 
-.nav-others a{
+/* .nav-others a{
     text-decoration: none;
 }
 .nav-others a:hover{
     text-decoration: underline;
+} */
+
+.other_nav{
+    padding-right: 6%;
 }
 
 .keluar{
     text-decoration: none !important;
     font-size: 1.2rem !important;
     background-color:#B54949;
-    color: white;
-    padding-top: 5px !important;
+    color: white !important;
+    /* color: white; */
+    /* padding-top: 5px !important;
     padding-left: 10px !important;
     padding-right: 10px !important;
     padding-bottom: 5px !important;
-    border-radius: 5px !important;
+    border-radius: 5px !important; */
 }
 
 .keluar:hover{
-    color: white;
+    background-color: #B54949 !important;
+    opacity: .8 !important;
 }
 
 .a{
