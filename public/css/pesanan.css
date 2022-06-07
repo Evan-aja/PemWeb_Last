@@ -3,9 +3,11 @@ table, th{
     border-collapse: collapse;
     padding: 5px 10px;
     text-align: center;
+    
 }
 
 td {
+    border: 2px solid #7969E8;
     border-right: 2px solid #8B7FDF;
     padding-top: 10px;
     padding-bottom: 10px;
