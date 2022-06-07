@@ -30,7 +30,7 @@
                 <button style="cursor:pointer" type="submit" class="browser-default tombolsubmit">Login</button>
             </div>
         </form>
-        <p class="belum_memiliki_akun">
+        <p>
           Belum memiliki akun? <a href="{{route('regsCreate')}}">Daftar</a>
         </p>
       </div>
