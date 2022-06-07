@@ -20,15 +20,44 @@
     <form action="">
         <h2>Detail Penyewaan</h2>
         <p style="margin-bottom:15px;">Mobil : {{$mobil->nama}}</p>
-        <input class="inputM browser-default" type="date" placeholder="Tanggal Pengambilan" name="pengambilan">
+        <input class="inputM browser-default" type="date" placeholder="Tanggal Pengambilan" name="pengambilan" id="date_ambil" oninput="tempCel(this.value)">
         <br>
-        <input class="inputM browser-default" type="date" placeholder="Tanggal Pengembalian" name="pengembalian">
+        <input class="inputM browser-default" type="date" placeholder="Tanggal Pengembalian" name="pengembalian" id="date_ngembaliin"oninput="tempCel2(this.value)">
 
         <p style="font-size: 11px; font-weight:bold; margin-bottom:30px;margin-top:5px;">*Tanggal Peminjaman dan Pengembalian <br>ditulis dengan format dd/mm/yyyy</p>
 
-        <p style="margin-bottom:15px ;">Harga Penyewaan : Rp. {{$mobil->harga}} x {(4)} hari = Rp . {(1.200.000)} </p>
+        <p style="margin-bottom:15px ;">Harga Penyewaan :  Rp. <span id="harga_mobil">{{$mobil->harga}}</span> x <span id="tes">NaN</span> hari = Rp . <span id="hasil_akhir">NaN</span> </p>
         <button class="prim-button">Kirim</button>
     </form>
 
+    
+
+    <script>
+        function tempCel(numbah_ambil){
+ 
+            document.getElementById('tes').innerHTML=numbah_ambil;
+ 
+        }
+        function tempCel2(numbah_ambil){
+
+            x = document.getElementById('tes').innerHTML.split("-");
+            y = numbah_ambil.split("-");
+            x = x[0]*365+x[1]*30+x[2];
+            y = y[0]*365+y[1]*30+y[2];
+            hasil = y-x;
+            if (hasil<0){
+                alert("gaboleh dibawah 0")
+                document.getElementById('tes').innerHTML = 'NaN';
+                document.getElementById('hasil_akhir').innerHTML = 'NaN';
+
+            }else{
+                document.getElementById('tes').innerHTML = hasil;
+                h = document.getElementById('harga_mobil').innerHTML;
+                document.getElementById('hasil_akhir').innerHTML = hasil*h;
+
+                
+            }
+        }
+    </script>
 </body>
 </html>
