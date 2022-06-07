@@ -25,7 +25,7 @@
         use \App\Http\Controllers\SessionController;
         echo SessionController::navbar();
     @endphp
-    <h1>Mobil</h1>
+    <h1 style="margin-left:43%;">Mobil</h1>
     <table style="border:1px solid black; width: 90%;">
         <tr style="border:1px solid black; ">
             <th>ID Mobil</th>
