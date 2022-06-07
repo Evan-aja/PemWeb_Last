@@ -1,5 +1,10 @@
+table{
+    width: 50% !important;
+}
+
 .label{
     padding-right: 2vw;
+    width: 30% !important;
 }
 
 .inputProfile
