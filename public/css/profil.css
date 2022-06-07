@@ -1,7 +1,12 @@
 table{
     width: 50% !important;
+    border-radius: 5px !important;
+
 }
 
+td{
+    border-radius: 5px !important;
+}
 
 .label{
     padding-right: 2vw;
