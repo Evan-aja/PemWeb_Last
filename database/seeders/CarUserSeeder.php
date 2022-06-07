@@ -29,10 +29,13 @@ class CarUserSeeder extends Seeder
             $konfirm=$faker->boolean;
             $lunas=false;
             $selesai=false;
+            $batal=false;
             if($konfirm){
                 $lunas=$faker->boolean;
-                if($lunas){
+                $batal=$faker->boolean;
+                if($lunas & !$batal){
                     $selesai=$faker->boolean;
+                    $batal=$faker->boolean;
                 }
             }
             DB::table('cars_users')->insert([
@@ -43,6 +46,7 @@ class CarUserSeeder extends Seeder
                 'foto_bukti'=>$faker->url(),
                 'lunas'=>$lunas,
                 'selesai'=>$selesai,
+                'batal'=>$batal,
                 'car_id'=>$idcar,
                 'user_id'=>$iduser,
                 'created_at'=>$datenow,

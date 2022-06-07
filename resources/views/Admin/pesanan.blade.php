@@ -31,7 +31,7 @@
                     <th>Action</th>
                 </tr>
                 @foreach($orders as $order)
-                    @if(!$order->konfirmasi)
+                    @if(!$order->konfirmasi & !$order->batal)
                         <tr>
                             <form action="{{route('adminEditPesanan')}}" method="POST">
                                 @csrf
@@ -66,7 +66,7 @@
                     <th>Action</th>
                 </tr>
                 @foreach($orders as $order)
-                    @if($order->konfirmasi)
+                    @if($order->konfirmasi & !$order->batal)
                         @if(!$order->lunas)
                             <tr>
                                 <form action="{{route('adminEditPesanan')}}" method="POST">
@@ -102,7 +102,7 @@
                     <th>Action</th>
                 </tr>
                 @foreach($orders as $order)
-                    @if($order->konfirmasi)
+                    @if($order->konfirmasi & !$order->batal)
                         @if($order->lunas)
                             @if(!$order->selesai)
                                 <tr>
@@ -140,7 +140,7 @@
                     <th>Action</th>
                 </tr>
                 @foreach($orders as $order)
-                    @if($order->konfirmasi)
+                    @if($order->konfirmasi & !$order->batal)
                         @if($order->lunas)
                             @if($order->selesai)
                                 <tr>
