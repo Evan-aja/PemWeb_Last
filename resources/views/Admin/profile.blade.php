@@ -24,9 +24,9 @@
     <div class="masuk_text">
     <h1 style="margin-top: 10vh;">Profil Admin</h1>
     <div id="fixed" style="display: block;">
-        <table style="border-spacing: 10px;" class="browser-default">
-            <tr>
-                <td class="label">Nama</td>
+        <table style="border-spacing: 10px;">
+            <tr style="border-spacing: 50px">
+                <td  class="label">Nama</td>
                 <td class="inputProfile ubahProfile">{{ auth()->user()->nama }}</td>
             </tr>
             <tr>
@@ -44,25 +44,25 @@
         </table>
     </div>
     <div id="edit"  style="display: none;">
-        <form method="POST" action="{{ route('profUpdate') }}" id="patch" class="browser-default">
+        <form method="POST" action="{{ route('profUpdate') }}" id="patch">
             {{ csrf_field() }}
 
             <table  style="border-spacing: 10px;" >
                 <tr>
                     <td class="label">Nama</td>
-                    <td class="inputProfile"><input type="text" class="form-control" id="nama" name="nama" value="{{ auth()->user()->nama }}"></td>
+                    <td class="inputProfile"><input type="text" class="form-control browser-default" id="nama" name="nama" value="{{ auth()->user()->nama }}"></td>
                 </tr>
                 <tr>
                     <td class="label">NIK</td>
-                    <td class="inputProfile"><input type="text" class="form-control" id="nik" name="nik" value="{{ auth()->user()->nik }}"></td>
+                    <td class="inputProfile"><input type="text" class="form-control browser-default" id="nik" name="nik" value="{{ auth()->user()->nik }}"></td>
                 </tr>
                 <tr>
                     <td class="label">Telepon</td>
-                    <td class="inputProfile "><input type="text" class="form-control" id="telepon" name="telepon" value="{{ auth()->user()->telepon }}"></td>
+                    <td class="inputProfile "><input type="text" class="form-control browser-default" id="telepon" name="telepon" value="{{ auth()->user()->telepon }}"></td>
                 </tr>
                 <tr>
                     <td class="label">Kota Asal</td>
-                    <td class="inputProfile"><input type="text" class="form-control" id="kota_asal" name="kota_asal" value="{{ auth()->user()->kota_asal }}"></td>
+                    <td class="inputProfile"><input type="text" class="form-control browser-default" id="kota_asal" name="kota_asal" value="{{ auth()->user()->kota_asal }}"></td>
                 </tr>
             </table>
 
