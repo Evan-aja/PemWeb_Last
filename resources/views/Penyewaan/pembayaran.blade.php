@@ -36,7 +36,7 @@
             @csrf
             <input type="number" value="{{$pesan}}" style="display: none;" readonly name="id">
 {{--            <input type="file" class="custom-file-input" accept="image/png, image/jpg, image/gif, image/jpeg"><br>--}}
-            <input type="url" name="foto" class="inputM" placeholder="Link Foto"><br>
+            <input type="url" name="foto" class="inputM browser-default" placeholder="Link Foto"><br>
             <button type="submit" class="prim-button">Upload</button>
         </form>
     </div>
