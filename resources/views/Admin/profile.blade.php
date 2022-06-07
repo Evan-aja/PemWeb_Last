@@ -24,7 +24,7 @@
     <div class="masuk_text">
     <h1 style="margin-top: 10vh;">Profil Admin</h1>
     <div id="fixed" style="display: block;">
-        <table style="border-spacing: 10px;">
+        <table style="border-spacing: 10px;" class="browser-default">
             <tr>
                 <td class="label">Nama</td>
                 <td class="inputProfile ubahProfile">{{ auth()->user()->nama }}</td>
@@ -44,7 +44,7 @@
         </table>
     </div>
     <div id="edit"  style="display: none;">
-        <form method="POST" action="{{ route('profUpdate') }}" id="patch">
+        <form method="POST" action="{{ route('profUpdate') }}" id="patch" class="browser-default">
             {{ csrf_field() }}
 
             <table  style="border-spacing: 10px;" >

@@ -21,7 +21,7 @@
     <h2 style="margin-top: 10vh; font-size:2vw; color:#7969E8;">Pesanan</h2>
         <div class="waitConfirm">
             <h3 style="margin-top: 8vh; color:#7969E8;">Status - Menunggu Konfirmasi</h3>
-            <table style="width: 90%;">
+            <table style="width: 90%;" class="browser-default">
                 <tr>
                     <th>ID Pesanan</th>
                     <th>Mobil</th>
@@ -56,7 +56,7 @@
 
         <div class="waitPayment">
             <h3 style="margin-top: 10vh; color:#7969E8;">Status - Menunggu Pembayaran</h3>
-            <table style="width:90%">
+            <table style="width:90%" class="browser-default">
                 <tr>
                     <th>ID Pesanan</th>
                     <th>Mobil</th>
@@ -92,7 +92,7 @@
 
         <div class="paid">
             <h3 style="margin-top: 10vh; color:#7969E8;">Status - Sudah Dibayar</h3>
-            <table style="width: 90%;">
+            <table style="width: 90%;" class="browser-default">
                 <tr>
                     <th>ID Pesanan</th>
                     <th>Mobil</th>
@@ -130,7 +130,7 @@
 
         <div class="finish">
             <h3 style="margin-top: 10vh; color:#7969E8;">Status - Selesai</h3>
-            <table style="margin-bottom: 10vh; width: 90%;">
+            <table style="margin-bottom: 10vh; width: 90%;" class="browser-default">
                 <tr>
                     <th>ID Pesanan</th>
                     <th>Mobil</th>
