@@ -63,9 +63,7 @@
                     <td class="label browser-default">Kota Asal</td>
                     <td class="inputProfile browser-default"><input type="text" class="form-control browser-default" id="kota_asal" name="kota_asal" value="{{ auth()->user()->kota_asal }}"></td>
                 </tr>
-                @isset($record)
-                    
-                @endisset
+
             </table>
 
         </form>

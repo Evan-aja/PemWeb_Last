@@ -20,7 +20,7 @@
     <form action="">
         <h2>Detail Penyewaan</h2>
         <p style="margin-bottom:15px;">Mobil : {{$mobil->nama}}</p>
-        <input class="inputM browser-default" type="date" placeholder="Tanggal Pengambilan" name="pengambilan" id="date_ambil" oninput="tempCel(this.value)">
+        <input class="inputM browser-default" type="date" placeholder="Tanggal Pengambilan" name="pengambilan" id="date_ambil" oninput="tempCel(this.value)" onclick="">
         <br>
         <input class="inputM browser-default" type="date" placeholder="Tanggal Pengembalian" name="pengembalian" id="date_ngembaliin"oninput="tempCel2(this.value)">
 
@@ -39,7 +39,6 @@
  
         }
         function tempCel2(numbah_ambil){
-
             x = document.getElementById('tes').innerHTML.split("-");
             y = numbah_ambil.split("-");
             x = x[0]*365+x[1]*30+x[2];
@@ -54,8 +53,6 @@
                 document.getElementById('tes').innerHTML = hasil;
                 h = document.getElementById('harga_mobil').innerHTML;
                 document.getElementById('hasil_akhir').innerHTML = hasil*h;
-
-                
             }
         }
     </script>
