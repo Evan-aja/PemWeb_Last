@@ -17,7 +17,7 @@ class CarUserSeeder extends Seeder
     public function run()
     {
         $faker=Faker::create('id_ID');
-        for($i=0;$i<5;$i++){
+        for($i=0;$i<30;$i++){
             $iduser=$faker->numberBetween(1,5);
             $idcar=$faker->numberBetween(1,5);
             $datenow=date('Y-m-d H:i:s');
@@ -29,10 +29,13 @@ class CarUserSeeder extends Seeder
             $konfirm=$faker->boolean;
             $lunas=false;
             $selesai=false;
+            $batal=false;
             if($konfirm){
                 $lunas=$faker->boolean;
-                if($lunas){
+                $batal=$faker->boolean;
+                if($lunas & !$batal){
                     $selesai=$faker->boolean;
+                    $batal=$faker->boolean;
                 }
             }
             DB::table('cars_users')->insert([
@@ -43,6 +46,7 @@ class CarUserSeeder extends Seeder
                 'foto_bukti'=>$faker->url(),
                 'lunas'=>$lunas,
                 'selesai'=>$selesai,
+                'batal'=>$batal,
                 'car_id'=>$idcar,
                 'user_id'=>$iduser,
                 'created_at'=>$datenow,

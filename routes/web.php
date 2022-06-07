@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,26 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[\App\Http\Controllers\Controller::class,'create'])->name('dashboard');
-
-Route::get('/formulir', function () {
-    return view('Penyewaan.formulir');
-})->name('formulir');
-
-Route::get('/waiting', function () {
-    return view('Penyewaan.waiting');
-})->name('waiting');
-
-Route::get('/riwayat', function () {
-    return view('riwayat');
-})->name('riwayat');
-
-Route::get('/berhasil', function () {
-    return view('berhasil');
-})->name('berhasil');
-
-Route::get('/pembayaran', function () {
-    return view('Penyewaan.pembayaran');
-})->name('pembayaran');
 
 Route::prefix('/admin')->group(function () {
     Route::get('/',[\App\Http\Controllers\AdminController::class,'create'])->name('adminCreate');
@@ -58,7 +38,7 @@ Route::prefix('/mobil')->group(function () {
     Route::post('/',[\App\Http\Controllers\CarController::class,'store'])->name('carRent');
 });
 
-Route::group(['prefix'=>'user'],function(){
+Route::prefix('/user')->group(function(){
     Route::get('/register',[\App\Http\Controllers\RegisterController::class,'create'])->name('regsCreate');
     Route::post('/register',[\App\Http\Controllers\RegisterController::class,'store'])->name('regsStore');
 
@@ -68,4 +48,12 @@ Route::group(['prefix'=>'user'],function(){
 
     Route::get('/',[\App\Http\Controllers\ProfileController::class,'create'])->name('profView');
     Route::post('/',[\App\Http\Controllers\ProfileController::class,'update'])->name('profUpdate');
+
+    Route::prefix('/riwayat')->group(function (){
+        Route::get('/',[\App\Http\Controllers\TransactionController::class,'histmgmt'])->name('userCreateHist');
+        Route::post('/',[\App\Http\Controllers\TransactionController::class,'histhist'])->name('userHistHist');
+
+        Route::post('/bayar',[\App\Http\Controllers\TransactionController::class,'histpay'])->name('userPayHist');
+    });
+    Route::get('/formulir',[\App\Http\Controllers\TransactionController::class,'formmgmt'])->name('formulir');
 });
