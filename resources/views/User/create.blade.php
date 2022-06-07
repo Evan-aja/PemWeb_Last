@@ -46,7 +46,7 @@
                     <button style="cursor:pointer" type="submit" class="tombolsubmit">Submit</button>
                 </div>
             </form>
-              <p>Sudah memiliki akun? <a href="{{route('sessCreate')}}">Masuk</a></p>
+              <p class="belum_memiliki_akun">Sudah memiliki akun? <a href="{{route('sessCreate')}}">Masuk</a></p>
           </div>
         </div>
 
