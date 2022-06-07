@@ -63,14 +63,15 @@
                             <td>{{$tran->peminjaman}}</td>
                             <td>{{$tran->pengembalian}}</td>
                             <td>
-                                <input type="submit" name="submit" class="prim-button" style="width: 60%" value="Bayar">
+    border: 1px solid black !important;
+                                <input type="submit" name="submit" class="prim-button " style="width: 60%" value="Bayar">
                                 <input type="submit" name="submit" class="red-button" style="width: 30%" value="Batal">
                             </td>
                         </form>
                     </tr>
                 @elseif(!$tran->konfirmasi & !$tran->lunas & !$tran->selesai & !$tran->batal)
                     <tr class="padding menungguKonfirmasi">
-                        <form action="{{route('userHistHist')}}" method="POST">
+                        <form action="{{route('userHistHist')}}" method="POST" class="browser-default">
                             @csrf
                             <td><input name="id" style="text-align: center" value="{{$tran->id}}" readonly></td>
                             <td>{{$cars->find($tran->car_id)->nama}}</td>
@@ -78,8 +79,8 @@
                             <td>{{$tran->peminjaman}}</td>
                             <td>{{$tran->pengembalian}}</td>
                             <td>
-                                <input type="submit" name="submit" class="prim-button" style="width: 60%" value="Menunggu Konfirmasi">
-                                <input type="submit" name="submit" class="red-button" style="width: 30%" value="Batal">
+                                <input type="submit" name="submit" class="prim-button browser-default" style="width: 60%" value="Menunggu Konfirmasi">
+                                <input type="submit" name="submit" class="red-button browser-default" style="width: 30%" value="Batal">
                             </td>
                         </form>
                     </tr>

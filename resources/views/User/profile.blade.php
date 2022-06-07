@@ -18,25 +18,25 @@
         echo SessionController::navbar();
     @endphp
     <div class="masuk_text">
-    <h1 style="margin-top: 10vh;">Profil</h1>
+    <h1 style="margin-top: 10vh; browser-default">Profil</h1>
     <div id="fixed" style="display: block;">
         @if(auth()->check())
-        <table style="border-spacing: 10px;">
-            <tr>
-                <td class="label">Nama</td>
-                <td class="inputProfile ubahProfile">{{ auth()->user()->nama }}</td>
+        <table style="border-spacing: 10px;" class="browser-default">
+            <tr class="browser-default">
+                <td class="label browser-default">Nama</td>
+                <td class="inputProfile ubahProfile browser-default">{{ auth()->user()->nama }}</td>
             </tr>
             <tr>
-                <td class="label">NIK</td>
-                <td class="inputProfile ubahProfile">{{ auth()->user()->nik }}</td>
+                <td class="label browser-default">NIK</td>
+                <td class="inputProfile ubahProfile browser-default">{{ auth()->user()->nik }}</td>
             </tr>
             <tr>
-                <td class="label">Telepon</td>
-                <td class="inputProfile ubahProfile">{{ auth()->user()->telepon }}</td>
+                <td class="label browser-default">Telepon</td>
+                <td class="inputProfile ubahProfile browser-default">{{ auth()->user()->telepon }}</td>
             </tr>
             <tr>
-                <td class="label">Kota Asal</td>
-                <td class="inputProfile ubahProfile">{{ auth()->user()->kota_asal }}</td>
+                <td class="label browser-default">Kota Asal</td>
+                <td class="inputProfile ubahProfile browser-default">{{ auth()->user()->kota_asal }}</td>
             </tr>
         </table>
         @else
@@ -44,32 +44,31 @@
         @endif
     </div>
     <div id="edit"  style="display: none;">
-        <form method="POST" action="{{ route('profUpdate') }}" id="patch">
+        <form method="POST" action="{{ route('profUpdate') }}" id="patch" class="browser-default">
             {{ csrf_field() }}
-
-            <table  style="border-spacing: 10px;" >
-                <tr>
-                    <td class="label">Nama</td>
-                    <td class="inputProfile"><input type="text" class="form-control" id="nama" name="nama" value="{{ auth()->user()->nama }}"></td>
+            <table  class="browser-default">
+                <tr class="browser-default">
+                    <td class="label browser-default">Nama</td>
+                    <td class="inputProfile browser-default"><input type="text" class="form-control browser-default" id="nama" name="nama" value="{{ auth()->user()->nama }}"></td>
                 </tr>
-                <tr>
-                    <td class="label">NIK</td>
-                    <td class="inputProfile"><input type="text" class="form-control" id="nik" name="nik" value="{{ auth()->user()->nik }}"></td>
+                <tr class="browser-default">
+                    <td class="label browser-default">NIK</td>
+                    <td class="inputProfile browser-default"><input type="text" class="form-control browser-default" id="nik" name="nik" value="{{ auth()->user()->nik }}"></td>
                 </tr>
-                <tr>
-                    <td class="label">Telepon</td>
-                    <td class="inputProfile "><input type="text" class="form-control" id="telepon" name="telepon" value="{{ auth()->user()->telepon }}"></td>
+                <tr class="browser-default">
+                    <td class="label browser-default">Telepon</td>
+                    <td class="inputProfile browser-default"><input type="text" class="form-control browser-default" id="telepon" name="telepon" value="{{ auth()->user()->telepon }}"></td>
                 </tr>
-                <tr>
-                    <td class="label">Kota Asal</td>
-                    <td class="inputProfile"><input type="text" class="form-control" id="kota_asal" name="kota_asal" value="{{ auth()->user()->kota_asal }}"></td>
+                <tr class="browser-default">
+                    <td class="label browser-default">Kota Asal</td>
+                    <td class="inputProfile browser-default"><input type="text" class="form-control browser-default" id="kota_asal" name="kota_asal" value="{{ auth()->user()->kota_asal }}"></td>
                 </tr>
             </table>
 
         </form>
     </div>
     <div style="display: inline-block;">
-        <button id="hide" onclick="edit()" class="tombolsubmit profil">Edit</button>
+        <button id="hide" onclick="edit()" class="tombolsubmit profil browser-default">Edit</button>
         <button style="cursor:pointer; display: none;" form="patch" type="submit" id="save" onclick="save()" class="tombolsubmit profil">Save</button>
     </div>
     </div>

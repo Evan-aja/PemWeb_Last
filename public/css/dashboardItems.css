@@ -16,7 +16,7 @@ h1{
     margin-left: 65px !important;
     /* overflow-y: auto; */
 }
-.card{
+.cards{
     position: relative;
     width: 230px !important;
     height: 300px !important;
