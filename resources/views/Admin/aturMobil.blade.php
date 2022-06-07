@@ -48,9 +48,9 @@
     </table>
 
         <div class="tombol">
-            <button onclick="tambah()" id="plus" class="prim-button">Tambah Mobil</button>
-            <button onclick="ubah()" id="edit" class="prim-button">Edit Mobil</button>
-            <button onclick="kurang()" id="hapus" class="prim-button">Hapus Mobil</button>
+            <button onclick="tambah()" id="plus" class="prim-button browser-default">Tambah Mobil</button>
+            <button onclick="ubah()" id="edit" class="prim-button browser-default">Edit Mobil</button>
+            <button onclick="kurang()" id="hapus" class="prim-button browser-default">Hapus Mobil</button>
         </div>
 
         <div class="edit">
@@ -58,17 +58,17 @@
                 <h3>Tambah Mobil</h3>
                 <form method="POST" action="{{route('adminAddMobil')}}">
                     @csrf
-                    <input type="text" class="inputM" placeholder="Nama" name="nama" required>
+                    <input type="text" class="inputM browser-default" placeholder="Nama" name="nama" required>
                     <br>
-                    <input type="number" class="inputM" placeholder="Kapasitas Mesin" name="mesin" required>
+                    <input type="number" class="inputM browser-default" placeholder="Kapasitas Mesin" name="mesin" required>
                     <br>
-                    <input type="number" class="inputM" placeholder="Harga" name="harga" required>
+                    <input type="number" class="inputM browser-default" placeholder="Harga" name="harga" required>
                     <br>
-                    <input type="number" class="inputM" placeholder="Jumlah Unit" name="jumlah" required>
+                    <input type="number" class="inputM browser-default" placeholder="Jumlah Unit" name="jumlah" required>
                     <br>
-                    <input type="text" class="inputM" placeholder="Upload Foto" name="foto" required>
+                    <input type="text" class="inputM browser-default" placeholder="Upload Foto" name="foto" required>
                     <br>
-                    <button type="submit" class="prim-button">Tambah</button>
+                    <button type="submit" class="prim-button browser-default">Tambah</button>
                 </form>
             </div>
 
@@ -78,17 +78,17 @@
                     <form method="POST" action="{{route('adminPatchMobil')}}">
                         @method('PATCH')
                         @csrf
-                        <input type="text" class="inputM" placeholder="ID Mobil (Wajib)" name="id" required>
+                        <input type="text" class="inputM browser-default" placeholder="ID Mobil (Wajib)" name="id" required>
                         <br>
-                        <input type="text" class="inputM" placeholder="Nama" name="nama">
+                        <input type="text" class="inputM browser-default" placeholder="Nama" name="nama">
                         <br>
-                        <input type="number" class="inputM" placeholder="Kapasitas Mesin" name="mesin">
+                        <input type="number" class="inputM browser-default" placeholder="Kapasitas Mesin" name="mesin">
                         <br>
-                        <input type="number" class="inputM" placeholder="Harga" name="harga">
+                        <input type="number" class="inputM browser-default" placeholder="Harga" name="harga">
                         <br>
-                        <input type="number" class="inputM" placeholder="Jumlah Unit" name="jumlah">
+                        <input type="number" class="inputM browser-default" placeholder="Jumlah Unit" name="jumlah">
                         <br>
-                        <input type="text" class="inputM" placeholder="Upload Foto" name="foto">
+                        <input type="text" class="inputM browser-default" placeholder="Upload Foto" name="foto">
                         <br>
                         <button class="prim-button" name="edit">Edit</button>
                     </form>
@@ -100,9 +100,9 @@
                 <form method="POST" action="{{route('adminDelMobil')}}" >
                     @method('DELETE')
                     @csrf
-                    <input type="number" class="inputM" placeholder="ID Mobil" name="id">
+                    <input type="number" class="inputM browser-default" placeholder="ID Mobil" name="id">
                     <br>
-                    <button type="submit" class="red-botton">Hapus</button>
+                    <button type="submit" class="red-botton browser-default">Hapus</button>
                 </form>
             </div>
         </div>
