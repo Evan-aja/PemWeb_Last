@@ -32,12 +32,12 @@
                                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons menu">menu</i></a>
                                 <ul class="right hide-on-med-and-down other_nav">
                                 <li><a href="{{route('profView')}}" class="ungu">Profil</a></li>
-                                <li><a href="{{route('riwayat')}}" class="ungu">Riwayat</a></li>
+                                <li><a href="{{route('userCreateHist')}}" class="ungu">Riwayat</a></li>
                                 <li><a href="{{route('sessDestroy')}}" class="ungu keluar">Keluar</a></li>
                                 </ul>
                                 <ul class="side-nav" id="mobile-demo">
                                 <li><a href="{{route('profView')}}"class="ungu">Profil</a></li>
-                                <li><a href="{{route('riwayat')}}"class="ungu">Riwayat</a></li>
+                                <li><a href="{{route('userCreateHist')}}"class="ungu">Riwayat</a></li>
                                 <li><a href="{{route('sessDestroy')}}"class="ungu keluar">Keluar</a></li>
                                 </ul>
                         </div>
