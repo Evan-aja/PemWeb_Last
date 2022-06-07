@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Car;
 use App\Models\CarsUsers;
-use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
-use Ramsey\Uuid\Type\Integer;
 
 class AdminController extends Controller
 {
@@ -17,8 +15,6 @@ class AdminController extends Controller
         if(auth()->check()){
             if(ProfileController::admincheck()){
                 return view('Admin.administrasi');
-            }else{
-                return redirect(route('dashboard'));
             }
         }
         return Redirect::route('dashboard');
@@ -28,8 +24,6 @@ class AdminController extends Controller
             if(ProfileController::admincheck()){
                 $cars=Car::all();
                 return view('Admin.aturMobil',['cars'=>$cars]);
-            }else{
-                return redirect(route('dashboard'));
             }
         }
         return Redirect::route('dashboard');
@@ -62,8 +56,6 @@ class AdminController extends Controller
                     return Redirect::back()->with('error','ID Mobil tidak ditemukan');
                 }
                 return Redirect::back()->with("message","Mobil berhasil dihapus");
-            }else{
-                return Redirect::route('dashboard');
             }
         }
         return Redirect::route('dashboard');
@@ -102,8 +94,6 @@ class AdminController extends Controller
                 $orders=CarsUsers::all();
                 $cars=Car::all();
                 return view('Admin.pesanan',['orders'=>$orders,'cars'=>$cars]);
-            }else{
-                return redirect(route('dashboard'));
             }
         }
         return Redirect::route('dashboard');
@@ -120,45 +110,23 @@ class AdminController extends Controller
                     $this->orderdone((int)$request->get('id'));
                 }
                 return redirect()->to(route('adminCreatePesanan'));
-            }else{
-                return redirect(route('dashboard'));
             }
         }
         return Redirect::route('dashboard');
     }
-    public function ordercfrm(int $id){
+    private function ordercfrm(int $id){
         $orders=CarsUsers::find($id);
         $orders->konfirmasi=true;
         $orders->save();
     }
-    public function ordercncl(int $id){
+    private function ordercncl(int $id){
         $orders=CarsUsers::find($id);
-        $orders->delete();
+        $orders->batal=true;
+        $orders->save();
     }
-    public function orderdone(int $id){
+    private function orderdone(int $id){
         $orders=CarsUsers::find($id);
         $orders->selesai=true;
         $orders->save();
     }
-//    public function cekmgmt(){
-//        if(auth()->check()){
-//            if(ProfileController::admincheck()){
-//                return view('Admin.cekid');
-//            }else{
-//                return redirect(route('dashboard'));
-//            }
-//        }
-//        return Redirect::route('dashboard');
-//    }
-//    public function cekorder(Request $request){
-//        if(auth()->check()){
-//            if(ProfileController::admincheck()){
-//                $query=CarsUsers::find($request->get('id'));
-//                return response()->json([$query]);
-//            }else{
-//                return redirect(route('dashboard'));
-//            }
-//        }
-//        return Redirect::route('dashboard');
-//    }
 }

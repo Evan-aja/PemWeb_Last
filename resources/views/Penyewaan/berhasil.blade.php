@@ -20,7 +20,7 @@
         <h2>Pembayaran Berhasil</h2>
         <p style="margin-bottom: 5vh;">Dalam waktu 20 menit Anda akan dihubungi melalui nomor telfon. <br>Jika ada permasalahan, Anda dapat menghubungi <b>+62851525334</b>.</p>
 
-        <a href="{{route('riwayat')}}">
+        <a href="{{route('userCreateHist')}}">
             <button class="prim-button">Oke</button>
         </a>
     </div>
