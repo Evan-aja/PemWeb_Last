@@ -1,4 +1,10 @@
-h2{ font-size:30px; color:#7969E8; margin-bottom: 5vh;
+h2{ 
+    font-size:30px; color:#7969E8; margin-bottom: 5vh;
+    font-weight: bolder !important;
+}
+
+table{
+    width: 70%;
 }
 
 th{
@@ -40,17 +46,13 @@ table, th{
     border: 2px solid #7969E8;
     border-collapse: collapse;
     padding: 5px 10px;
-    text-align: center;
+    text-align: center !important;
 }
 
 td {
     padding-top: 10px;
     padding-bottom: 10px;
     border-right: 2px solid #8B7FDF
-}
-
-table{
-    width: 70%;
 }
 
 .isi{
