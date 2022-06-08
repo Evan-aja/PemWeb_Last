@@ -13,7 +13,10 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function create(){
-        $cars=Car::all();
-        return view('dashboard',["mobil"=>$cars]);
+        if(auth()->check()){
+            $cars=Car::all();
+            return view('dashboard',["mobil"=>$cars]);
+        }
+        return redirect()->to(route('sessCreate'));
     }
 }
