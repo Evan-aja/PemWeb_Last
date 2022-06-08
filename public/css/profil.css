@@ -49,7 +49,7 @@ input:focus{
 h1{
     color: #7969E8;
     margin-bottom: 5vh;
-
+    font-weight: bolder !important;
 }
 
 .masuk_text{

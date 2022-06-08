@@ -26,23 +26,23 @@
         echo SessionController::navbar();
     @endphp
     <h1 style="margin-left:43%;">Mobil</h1>
-    <table style="border:1px solid black; width: 90%;">
-        <tr style="border:1px solid black; ">
+    <table>
+        <tr >
             <th>ID Mobil</th>
             <th>Nama</th>
             <th>Kapasitas Mesin</th>
             <th>Harga</th>
             <th>Jumlah Unit</th>
-            <th>Foto</th>
+            <th class="padding">Foto</th>
         </tr>
         @foreach ($cars as $i)
         <tr >
-            <td class="padding">{{$i->id}}</td>
-            <td class="padding">{{$i->nama}}</td>
-            <td class="padding">{{$i->mesin}}cc</td>
-            <td class="padding">Rp. {{$i->harga}}</td>
-            <td class="padding">{{$i->jumlah}}</td>
-            <td class="padding"><a href="{{$i->foto}}" target="_blank">{{$i->foto}}</a></td>
+            <td class="">{{$i->id}}</td>
+            <td class="">{{$i->nama}}</td>
+            <td class="">{{$i->mesin}}cc</td>
+            <td class="">Rp. {{$i->harga}}</td>
+            <td class="">{{$i->jumlah}}</td>
+            <td class="padding"><a href="{{$i->foto}}" target="_blank">Foto Mobil</a></td>
         </tr>
         @endforeach
     </table>
