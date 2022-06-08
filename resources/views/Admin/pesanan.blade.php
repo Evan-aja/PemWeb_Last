@@ -24,6 +24,8 @@
             <table style="width: 90%;">
                 <tr>
                     <th>ID Pesanan</th>
+                    <th>Nama Peminjam</th>
+                    <th>Telepon</th>
                     <th>Mobil</th>
                     <th>Harga</th>
                     <th>Pengambilan</th>
