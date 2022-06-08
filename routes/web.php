@@ -56,4 +56,5 @@ Route::prefix('/user')->group(function(){
         Route::post('/bayar',[\App\Http\Controllers\TransactionController::class,'histpay'])->name('userPayHist');
     });
     Route::get('/formulir',[\App\Http\Controllers\TransactionController::class,'formmgmt'])->name('formulir');
+    Route::post('/formulir',[\App\Http\Controllers\TransactionController::class,'formstore'])->name('formulirPost');
 });

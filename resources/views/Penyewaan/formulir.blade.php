@@ -17,26 +17,28 @@
 
 
 
-    <form action="">
+    <form action="{{route('formulirPost')}}" method="POST">
+        @csrf
         <h2>Detail Penyewaan</h2>
         <p style="margin-bottom:15px;">Mobil : {{$mobil->nama}}</p>
+        <input type="number" name="id" value="{{$mobil->id}}" style="display: none">
         <input class="inputM browser-default" type="date" placeholder="Tanggal Pengambilan" name="pengambilan" id="date_ambil" oninput="tempCel(this.value)" onclick="">
         <br>
         <input class="inputM browser-default" type="date" placeholder="Tanggal Pengembalian" name="pengembalian" id="date_ngembaliin"oninput="tempCel2(this.value)">
 
         <p style="font-size: 11px; font-weight:bold; margin-bottom:30px;margin-top:5px;">*Tanggal Peminjaman dan Pengembalian <br>ditulis dengan format dd/mm/yyyy</p>
 
-        <p style="margin-bottom:15px ;">Harga Penyewaan :  Rp. <span id="harga_mobil">{{$mobil->harga}}</span> x <span id="tes">NaN</span> hari = Rp . <span id="hasil_akhir">NaN</span> </p>
-        <button class="prim-button">Kirim</button>
+        <p style="margin-bottom:15px ;">Harga Penyewaan :  Rp. <span id="harga_mobil">{{$mobil->harga}}</span> x <span id="tes" name="tes">NaN</span> hari = Rp . <span id="hasil_akhir">NaN</span> </p>
+        <button type="submit" class="prim-button">Kirim</button>
     </form>
 
-    
+
 
     <script>
         function tempCel(numbah_ambil){
- 
+
             document.getElementById('tes').innerHTML=numbah_ambil;
- 
+
         }
         function tempCel2(numbah_ambil){
             x = document.getElementById('tes').innerHTML.split("-");
