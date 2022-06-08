@@ -63,8 +63,8 @@
                             <td>{{$tran->peminjaman}}</td>
                             <td>{{$tran->pengembalian}}</td>
                             <td>
-                                <input type="submit" name="submit" class="prim-button " style="width: 100%;font-size:0.8rem;" value="Bayar">
-                                <input type="submit" name="submit" class="red-button" style="width: 30%;font-size:0.8rem;" value="Batal">
+                                <input type="submit" name="submit" class="prim-button browser-default bayar" value="Bayar">
+                                <input type="submit" name="submit" class="red-button browser-default batal" value="Batal">
                             </td>
                         </form>
                     </tr>
@@ -78,8 +78,8 @@
                             <td>{{$tran->peminjaman}}</td>
                             <td>{{$tran->pengembalian}}</td>
                             <td>
-                                <input type="submit" name="submit" class="prim-button browser-default" style="width: 60%; font-size:0.8rem;" value="Menunggu Konfirmasi">
-                                <input type="submit" name="submit" class="red-button browser-default" style="width: 30%; font-size:0.8rem;" value="Batal">
+                                <input type="submit" name="submit" class="prim-button browser-default menunggu_konfirmasi" value="Menunggu Konfirmasi">
+                                <input type="submit" name="submit" class="red-button browser-default batal" value="Batal">
                             </td>
                         </form>
                     </tr>
