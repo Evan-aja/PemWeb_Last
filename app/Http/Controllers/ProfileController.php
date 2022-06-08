@@ -24,7 +24,7 @@ class ProfileController extends Controller
                 return view('User.profile');
             }
         }else{
-            return view('dashboard');
+            return redirect()->to(route('dashboard'));
         }
     }
     public function update(Request $request): \Illuminate\Http\RedirectResponse

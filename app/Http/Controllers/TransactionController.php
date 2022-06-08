@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Models\CarsUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class TransactionController extends Controller
@@ -39,10 +40,31 @@ class TransactionController extends Controller
         $pays->foto_bukti=$request->get('foto');
         $pays->lunas=true;
         $pays->save();
-        return view('Penyewaan.pembayaran', ['pesan' => $request->get('id')]);
-    }   
+        return redirect()->to(route('userCreateHist'));
+    }
     public function formmgmt(Request $request){
         $cars=Car::find($request->get("id"));
         return view('Penyewaan.formulir',['mobil'=>$cars]);
+    }
+    public function formstore(Request $request){
+        $iduser=auth()->id();
+        $idcar=$request->get('id');
+        $datenow=date('Y-m-d H:i:s',strtotime($request->get('pengambilan')));
+        $datelater=date('Y-m-d H:i:s',strtotime($request->get('pengembalian')));
+        $harga=DB::table('cars')->where('id','=',$idcar)->pluck('harga');
+        $date1=strtotime($datenow);
+        $date2=strtotime($datelater);
+        $hari=abs($date2-$date1)/86400;
+        $harga=$hari*$harga[0];
+        DB::table('cars_users')->insert([
+            'peminjaman'=>$datenow,
+            'pengembalian'=>$datelater,
+            'harga'=>$harga,
+            'car_id'=>$idcar,
+            'user_id'=>$iduser,
+            'created_at'=>$datenow,
+            'updated_at'=>$datenow
+        ]);
+        return redirect()->to(route('userCreateHist'));
     }
 }
