@@ -18,7 +18,7 @@
 
 
     <div class="status">
-    <h2 style="margin-top: 10vh; font-size:2vw; color:#7969E8;">Pesanan</h2>
+    {{-- <h2 style="margin-top: 10vh; font-size:2vw; color:#7969E8;">Pesanan</h2> --}}
         <div class="waitConfirm">
             <h3 style="margin-top: 8vh; color:#7969E8;">Status - Menunggu Konfirmasi</h3>
             <table style="width: 95%;">
@@ -38,15 +38,15 @@
                             <form action="{{route('adminEditPesanan')}}" method="POST">
                                 @csrf
                                 <td style="width: 4%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
-                                <td style="">{{\App\Models\User::find($order->user_id)->nama}}</td>
-                                <td style="">{{\App\Models\User::find($order->user_id)->telepon}}</td>
+                                <td>{{\App\Models\User::find($order->user_id)->nama}}</td>
+                                <td>{{\App\Models\User::find($order->user_id)->telepon}}</td>
                                 <td style="width: 10%;">{{$cars->find($order->car_id)->nama}}</td>
                                 <td style="width: 10%;">Rp. {{$order->harga}}</td>
                                 <td style="width: 12%;">{{$order->peminjaman}}</td>
                                 <td style="width: 12%;">{{$order->pengembalian}}</td>
                                 <td style="width: 20%;">
-                                    <input type="submit" name="submit" class="prim-button" value="Konfirmasi">
-                                    <input type="submit" name="submit" class="red-button" value="Batal">
+                                    <input type="submit" name="submit" class="prim-button konfirmasi" value="Konfirmasi">
+                                    <input type="submit" name="submit" class="red-button batal" value="Batal">
                                 </td>
                             </form>
                         </tr>
@@ -84,7 +84,7 @@
                                     <td style="width: 12%;">{{$order->peminjaman}}</td>
                                     <td style="width: 12%;">{{$order->pengembalian}}</td>
                                     <td style="width: 20%;">
-                                        <input type="submit" name="submit" class="red-button" value="Batal">
+                                        <input type="submit" name="submit" class="red-button batal" value="Batal">
                                     </td>
                                 </form>
                             </tr>
@@ -126,7 +126,7 @@
                                         <td style="width: 20%;">
                                             <input type="submit" name="submits" class="prim-button" value="Konfirmasi">
                                             <a href="{{$order->foto_bukti}}" target="_blank" style="text-decoration: none;"><span class="sec-button">Lihat Foto</span></a>
-                                            <input type="submit" name="submit" class="red-button" value="Batal">
+                                            <input type="submit" name="submit" class="red-button batal" value="Batal">
                                         </td>
                                     </form>
                                 </tr>
@@ -165,7 +165,7 @@
                                         <td style="width: 12%;">{{$order->peminjaman}}</td>
                                         <td style="width: 12%;">{{$order->pengembalian}}</td>
                                         <td style="width: 20%;">
-                                            <a href="{{$order->foto_bukti}}" target="_blank" style="text-decoration: none;"><span class="sec-button">Lihat Foto</span></a>
+                                            <a href="{{$order->foto_bukti}}" target="_blank" style="text-decoration: none;"><span class="sec-button lihat_foto">Lihat Foto</span></a>
                                         </td>
                                     </form>
                                 </tr>
