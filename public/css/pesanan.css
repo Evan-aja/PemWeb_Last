@@ -23,13 +23,29 @@ table{
     display: inline-block !important;
 }
 
+.lihat_foto2{
+    display: inline-block !important;
+    width: 100% !important;
+    /* padding: 6px 33% 5px 33% !important; */
+    margin-bottom: -15px !important;
+}
+
 .batal{
     width: 100%;
     /* margin-top: -10px !important; */
+    
 }
+
 
 .konfirmasi{
     width: 100%;    
+}
+
+.konfirmasi2{
+    width: 100%;    
+    /* padding: 10px !important; */
+    margin-top: 13px;
+
 }
 
 *{
@@ -72,4 +88,11 @@ h3{
 
 .status{
     margin-left: 5vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .konfirmasi2{
+        width: 100%;    
+    }
+    
 }
