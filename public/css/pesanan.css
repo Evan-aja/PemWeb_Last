@@ -20,6 +20,8 @@ table{
 .lihat_foto{
     /* width: 100% !important; */
     /* background-color: black !important; */
+    width: 100% !important;
+
     display: inline-block !important;
 }
 
