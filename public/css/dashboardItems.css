@@ -7,13 +7,13 @@ h1{
     /* left: 29%; */
     text-align: center;
     /* margin-bottom: 10vh !important; */
-    font-weight: bolder;
+    font-weight: bolder !important;
 }
 
 .item{
     width: 85%;
     margin-top: 20px !important;
-    margin-left: 65px !important;
+    margin-left: 15px !important;
     /* overflow-y: auto; */
 }
 .cards{
@@ -32,7 +32,6 @@ h1{
 .card:hover{
     cursor: pointer;
     opacity: .9;
-
 }
 
 .cards img{
@@ -56,7 +55,7 @@ h1{
 
 .card-car-name{
     position: absolute;
-    top: 26vh;
+    top: 70%;
     left: 1.3vw;
     font-size: 1.5rem;
     color: white;
@@ -72,7 +71,7 @@ h1{
 
 .card-car-cc{
     position: absolute;
-    top: 70%;
+    top: 78%;
     left: 76%;
     color: white;
     font-size: .8rem;
@@ -97,6 +96,13 @@ h1{
     /* background-color: red !important; */
 }
 
+.kartuMobil:hover{
+    cursor: pointer;
+    opacity: .3;
+    background-color: black;
+}
+
+
 .gambarr{
     position: absolute;
     left: 0;
@@ -112,5 +118,31 @@ h1{
         margin-top: 15px !important;
         margin-left: 20% !important;
         /* overflow-y: auto; */
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .card-car-name{
+        position: absolute;
+        top: 70%;
+        left: 1.3vw;
+        font-size: 1.5rem;
+        color: white;
+    }
+    
+    .card-car-price{
+        position: absolute;
+        top: 83%;
+        left: 1.3vw;
+        font-size: 1.5rem;
+        color: white;
+    }
+    
+    .card-car-cc{
+        position: absolute;
+        top: 78%;
+        left: 76%;
+        color: white;
+        font-size: .8rem;
     }
 }

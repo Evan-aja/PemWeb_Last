@@ -36,7 +36,7 @@
                         <td>{{$tran->peminjaman}}</td>
                         <td>{{$tran->pengembalian}}</td>
                         <td>
-                            <p style="width: 90%"><b>Selesai</b></p>
+                            <p><b>Selesai</b></p>
                         </td>
                     </tr>
                 @elseif($tran->konfirmasi & $tran->lunas & !$tran->selesai & !$tran->batal)
@@ -49,7 +49,7 @@
                             <td>{{$tran->peminjaman}}</td>
                             <td>{{$tran->pengembalian}}</td>
                             <td>
-                                <input type="submit" name="submit" class="prim-button" style="width: 75%" value="Pembayaran Berhasil">
+                                <input type="submit" name="submit" class="prim-button batal" value="Pembayaran Berhasil">
                             </td>
                         </form>
                     </tr>

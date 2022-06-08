@@ -124,8 +124,8 @@
                                         <td style="width: 12%;">{{$order->peminjaman}}</td>
                                         <td style="width: 12%;">{{$order->pengembalian}}</td>
                                         <td style="width: 20%;">
-                                            <input type="submit" name="submits" class="prim-button" value="Konfirmasi">
-                                            <a href="{{$order->foto_bukti}}" target="_blank" style="text-decoration: none;"><span class="sec-button">Lihat Foto</span></a>
+                                            <a href="{{$order->foto_bukti}}" target="_blank" style="text-decoration: none;width:50%;"><span class="sec-button lihat_foto2">Lihat Foto</span></a>
+                                            <input type="submit" name="submits" class="prim-button konfirmasi2" value="Konfirmasi">
                                             <input type="submit" name="submit" class="red-button batal" value="Batal">
                                         </td>
                                     </form>
