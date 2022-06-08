@@ -49,7 +49,7 @@
                             <td>{{$tran->peminjaman}}</td>
                             <td>{{$tran->pengembalian}}</td>
                             <td>
-                                <input type="submit" name="submit" class="prim-button" style="width: 60%" value="Pembayaran Berhasil">
+                                <input type="submit" name="submit" class="prim-button" style="width: 75%" value="Pembayaran Berhasil">
                             </td>
                         </form>
                     </tr>
@@ -63,14 +63,14 @@
                             <td>{{$tran->peminjaman}}</td>
                             <td>{{$tran->pengembalian}}</td>
                             <td>
-                                <input type="submit" name="submit" class="prim-button" style="width: 60%" value="Bayar">
-                                <input type="submit" name="submit" class="red-button" style="width: 30%" value="Batal">
+                                <input type="submit" name="submit" class="prim-button " style="width: 100%;font-size:0.8rem;" value="Bayar">
+                                <input type="submit" name="submit" class="red-button" style="width: 30%;font-size:0.8rem;" value="Batal">
                             </td>
                         </form>
                     </tr>
                 @elseif(!$tran->konfirmasi & !$tran->lunas & !$tran->selesai & !$tran->batal)
                     <tr class="padding menungguKonfirmasi">
-                        <form action="{{route('userHistHist')}}" method="POST">
+                        <form action="{{route('userHistHist')}}" method="POST" class="browser-default">
                             @csrf
                             <td><input name="id" style="text-align: center" value="{{$tran->id}}" readonly></td>
                             <td>{{$cars->find($tran->car_id)->nama}}</td>
@@ -78,8 +78,8 @@
                             <td>{{$tran->peminjaman}}</td>
                             <td>{{$tran->pengembalian}}</td>
                             <td>
-                                <input type="submit" name="submit" class="prim-button" style="width: 60%" value="Menunggu Konfirmasi">
-                                <input type="submit" name="submit" class="red-button" style="width: 30%" value="Batal">
+                                <input type="submit" name="submit" class="prim-button browser-default" style="width: 60%; font-size:0.8rem;" value="Menunggu Konfirmasi">
+                                <input type="submit" name="submit" class="red-button browser-default" style="width: 30%; font-size:0.8rem;" value="Batal">
                             </td>
                         </form>
                     </tr>

@@ -43,7 +43,6 @@ class CarUserSeeder extends Seeder
                 'pengembalian'=>$datelater,
                 'harga'=>(int)$harga[0]*((abs(strtotime($datenow)-strtotime($datelater)))/86400),
                 'konfirmasi'=>$konfirm,
-                'foto_bukti'=>$faker->url(),
                 'lunas'=>$lunas,
                 'selesai'=>$selesai,
                 'batal'=>$batal,

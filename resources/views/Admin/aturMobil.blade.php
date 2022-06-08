@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="{{asset('css/aturMobil.css')}}" rel="stylesheet" type="text/css" />
     <link rel="icon" href="{{asset('image/Untitleddd.png')}}">
+    <title>Mobil</title>
     <title>Atur Mobil</title>
 </head>
 <body>
@@ -24,7 +25,7 @@
         use \App\Http\Controllers\SessionController;
         echo SessionController::navbar();
     @endphp
-    <h1>Mobil</h1>
+    <h1 style="margin-left:43%;">Mobil</h1>
     <table style="border:1px solid black; width: 90%;">
         <tr style="border:1px solid black; ">
             <th>ID Mobil</th>
@@ -47,15 +48,15 @@
     </table>
 
         <div class="tombol">
-            <button onclick="tambah()" id="plus" class="prim-button">Tambah Mobil</button>
-            <button onclick="ubah()" id="edit" class="prim-button">Edit Mobil</button>
-            <button onclick="kurang()" id="hapus" class="prim-button">Hapus Mobil</button>
+            <button onclick="tambah()" id="plus" class="prim-button browser-default">Tambah Mobil</button>
+            <button onclick="ubah()" id="edit" class="prim-button browser-default">Edit Mobil</button>
+            <button onclick="kurang()" id="hapus" class="prim-button browser-default">Hapus Mobil</button>
         </div>
 
         <div class="edit">
             <div id="tambah" class="tambah" style="display: none;">
                 <h3>Tambah Mobil</h3>
-                <form method="POST" action="{{route('adminAddMobil')}}" class="browser-default">
+                <form method="POST" action="{{route('adminAddMobil')}}">
                     @csrf
                     <input type="text" class="inputM browser-default" placeholder="Nama" name="nama" required>
                     <br>
@@ -67,14 +68,14 @@
                     <br>
                     <input type="text" class="inputM browser-default" placeholder="Upload Foto" name="foto" required>
                     <br>
-                    <button type="submit" class="prim-button">Tambah</button>
+                    <button type="submit" class="prim-button browser-default">Tambah</button>
                 </form>
             </div>
 
             <div id="ubah" class="ubah" style="display: none;">
                 <h3>Edit Mobil</h3>
                 <div id="after">
-                    <form method="POST" action="{{route('adminPatchMobil')}}" class="browser-default">
+                    <form method="POST" action="{{route('adminPatchMobil')}}">
                         @method('PATCH')
                         @csrf
                         <input type="text" class="inputM browser-default" placeholder="ID Mobil (Wajib)" name="id" required>
@@ -96,12 +97,12 @@
 
             <div id="kurang" class="kurang" style="display: none;">
                 <h3>Hapus Mobil</h3>
-                <form method="POST" action="{{route('adminDelMobil')}}" class="browser-default">
+                <form method="POST" action="{{route('adminDelMobil')}}" >
                     @method('DELETE')
                     @csrf
                     <input type="number" class="inputM browser-default" placeholder="ID Mobil" name="id">
                     <br>
-                    <button type="submit" class="red-botton">Hapus</button>
+                    <button type="submit" class="red-botton browser-default">Hapus</button>
                 </form>
             </div>
         </div>

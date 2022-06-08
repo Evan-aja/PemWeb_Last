@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('pengembalian');
             $table->bigInteger('harga');
             $table->boolean('konfirmasi')->default(false);
-            $table->string('foto_bukti');
+            $table->string('foto_bukti')->default("empty");
             $table->boolean('lunas')->default(false);
             $table->boolean('selesai')->default(false);
             $table->boolean('batal')->default(false);

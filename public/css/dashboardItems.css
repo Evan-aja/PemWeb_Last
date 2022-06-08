@@ -35,7 +35,7 @@ h1{
 
 }
 
-.card img{
+.cards img{
     position: relative;
     height: 300px ;
     width: 230px;
@@ -85,6 +85,22 @@ h1{
 .card p:nth-child(2){
     margin-top: -10px !important;
     font-weight: bolder;
+}
+
+.kartuMobil{
+    width: 230px !important;
+    height: 300px !important;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    opacity: 0%;
+    /* background-color: red !important; */
+}
+
+.gambarr{
+    position: absolute;
+    left: 0;
+    /* z-index: 3; */
 }
 
 @media only screen and (max-width: 600px) {
