@@ -21,28 +21,29 @@
     <h2 style="margin-top: 10vh; font-size:2vw; color:#7969E8;">Pesanan</h2>
         <div class="waitConfirm">
             <h3 style="margin-top: 8vh; color:#7969E8;">Status - Menunggu Konfirmasi</h3>
-            <table style="width: 90%;">
+            <table style="width: 95%;">
                 <tr>
-                    <th>ID Pesanan</th>
-                    <th>Nama Peminjam</th>
-                    <th>Telepon</th>
-                    <th>Mobil</th>
-                    <th>Harga</th>
-                    <th>Pengambilan</th>
-                    <th>Pengembalian</th>
-                    <th>Action</th>
+                    <th style="text-align: center">ID</th>
+                    <th style="text-align: center">Peminjam</th>
+                    <th style="text-align: center">Telepon</th>
+                    <th style="text-align: center">Mobil</th>
+                    <th style="text-align: center">Harga</th>
+                    <th style="text-align: center">Pengambilan</th>
+                    <th style="text-align: center">Pengembalian</th>
+                    <th style="text-align: center">Action</th>
                 </tr>
                 @foreach($orders as $order)
                     @if(!$order->konfirmasi & !$order->batal)
                         <tr>
                             <form action="{{route('adminEditPesanan')}}" method="POST">
                                 @csrf
-{{--                                <td style="width: 8%;">{{$order->id}}</td>--}}
-                                <td style="width: 8%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
-                                <td style="width: 18%;">{{$cars->find($order->car_id)->nama}}</td>
-                                <td style="width: 22%;">Rp. {{$order->harga}}</td>
-                                <td style="width: 16%;">{{$order->peminjaman}}</td>
-                                <td style="width: 16%;">{{$order->pengembalian}}</td>
+                                <td style="width: 4%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
+                                <td style="">{{\App\Models\User::find($order->user_id)->nama}}</td>
+                                <td style="">{{\App\Models\User::find($order->user_id)->telepon}}</td>
+                                <td style="width: 10%;">{{$cars->find($order->car_id)->nama}}</td>
+                                <td style="width: 10%;">Rp. {{$order->harga}}</td>
+                                <td style="width: 12%;">{{$order->peminjaman}}</td>
+                                <td style="width: 12%;">{{$order->pengembalian}}</td>
                                 <td style="width: 20%;">
                                     <input type="submit" name="submit" class="prim-button" value="Konfirmasi">
                                     <input type="submit" name="submit" class="red-button" value="Batal">
@@ -58,14 +59,16 @@
 
         <div class="waitPayment">
             <h3 style="margin-top: 10vh; color:#7969E8;">Status - Menunggu Pembayaran</h3>
-            <table style="width:90%">
+            <table style="width: 95%;">
                 <tr>
-                    <th>ID Pesanan</th>
-                    <th>Mobil</th>
-                    <th>Harga</th>
-                    <th>Pengambilan</th>
-                    <th>Pengembalian</th>
-                    <th>Action</th>
+                    <th style="text-align: center">ID</th>
+                    <th style="text-align: center">Peminjam</th>
+                    <th style="text-align: center">Telepon</th>
+                    <th style="text-align: center">Mobil</th>
+                    <th style="text-align: center">Harga</th>
+                    <th style="text-align: center">Pengambilan</th>
+                    <th style="text-align: center">Pengembalian</th>
+                    <th style="text-align: center">Action</th>
                 </tr>
                 @foreach($orders as $order)
                     @if($order->konfirmasi & !$order->batal)
@@ -73,12 +76,13 @@
                             <tr>
                                 <form action="{{route('adminEditPesanan')}}" method="POST">
                                     @csrf
-{{--                                    <td style="width: 8%;" name="id">{{$order->id}}</td>--}}
-                                    <td style="width: 8%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
-                                    <td style="width: 18%;">{{$cars->find($order->car_id)->nama}}</td>
-                                    <td style="width: 22%;">Rp. {{$order->harga}}</td>
-                                    <td style="width: 16%;">{{$order->peminjaman}}</td>
-                                    <td style="width: 16%;">{{$order->pengembalian}}</td>
+                                    <td style="width: 4%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
+                                    <td style="">{{\App\Models\User::find($order->user_id)->nama}}</td>
+                                    <td style="">{{\App\Models\User::find($order->user_id)->telepon}}</td>
+                                    <td style="width: 10%;">{{$cars->find($order->car_id)->nama}}</td>
+                                    <td style="width: 10%;">Rp. {{$order->harga}}</td>
+                                    <td style="width: 12%;">{{$order->peminjaman}}</td>
+                                    <td style="width: 12%;">{{$order->pengembalian}}</td>
                                     <td style="width: 20%;">
                                         <input type="submit" name="submit" class="red-button" value="Batal">
                                     </td>
@@ -94,14 +98,16 @@
 
         <div class="paid">
             <h3 style="margin-top: 10vh; color:#7969E8;">Status - Sudah Dibayar</h3>
-            <table style="width: 90%;">
+            <table style="width: 95%;">
                 <tr>
-                    <th>ID Pesanan</th>
-                    <th>Mobil</th>
-                    <th>Harga</th>
-                    <th>Pengambilan</th>
-                    <th>Pengembalian</th>
-                    <th>Action</th>
+                    <th style="text-align: center">ID</th>
+                    <th style="text-align: center">Peminjam</th>
+                    <th style="text-align: center">Telepon</th>
+                    <th style="text-align: center">Mobil</th>
+                    <th style="text-align: center">Harga</th>
+                    <th style="text-align: center">Pengambilan</th>
+                    <th style="text-align: center">Pengembalian</th>
+                    <th style="text-align: center">Action</th>
                 </tr>
                 @foreach($orders as $order)
                     @if($order->konfirmasi & !$order->batal)
@@ -110,12 +116,13 @@
                                 <tr>
                                     <form action="{{route('adminEditPesanan')}}" method="POST">
                                         @csrf
-{{--                                        <td style="width: 8%;">{{$order->id}}</td>--}}
-                                        <td style="width: 8%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
-                                        <td style="width: 18%;">{{$cars->find($order->car_id)->nama}}</td>
-                                        <td style="width: 22%;">Rp. {{$order->harga}}</td>
-                                        <td style="width: 16%;">{{$order->peminjaman}}</td>
-                                        <td style="width: 16%;">{{$order->pengembalian}}</td>
+                                        <td style="width: 4%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
+                                        <td style="">{{\App\Models\User::find($order->user_id)->nama}}</td>
+                                        <td style="">{{\App\Models\User::find($order->user_id)->telepon}}</td>
+                                        <td style="width: 10%;">{{$cars->find($order->car_id)->nama}}</td>
+                                        <td style="width: 10%;">Rp. {{$order->harga}}</td>
+                                        <td style="width: 12%;">{{$order->peminjaman}}</td>
+                                        <td style="width: 12%;">{{$order->pengembalian}}</td>
                                         <td style="width: 20%;">
                                             <input type="submit" name="submits" class="prim-button" value="Konfirmasi">
                                             <a href="{{$order->foto_bukti}}" target="_blank" style="text-decoration: none;"><span class="sec-button">Lihat Foto</span></a>
@@ -132,14 +139,16 @@
 
         <div class="finish">
             <h3 style="margin-top: 10vh; color:#7969E8;">Status - Selesai</h3>
-            <table style="margin-bottom: 10vh; width: 90%;">
+            <table style="width: 95%;">
                 <tr>
-                    <th>ID Pesanan</th>
-                    <th>Mobil</th>
-                    <th>Harga</th>
-                    <th>Pengambilan</th>
-                    <th>Pengembalian</th>
-                    <th>Action</th>
+                    <th style="text-align: center">ID</th>
+                    <th style="text-align: center">Peminjam</th>
+                    <th style="text-align: center">Telepon</th>
+                    <th style="text-align: center">Mobil</th>
+                    <th style="text-align: center">Harga</th>
+                    <th style="text-align: center">Pengambilan</th>
+                    <th style="text-align: center">Pengembalian</th>
+                    <th style="text-align: center">Action</th>
                 </tr>
                 @foreach($orders as $order)
                     @if($order->konfirmasi & !$order->batal)
@@ -148,12 +157,13 @@
                                 <tr>
                                     <form action="{{route('adminEditPesanan')}}" method="POST">
                                         @csrf
-{{--                                        <td style="width: 8%;">{{$order->id}}</td>--}}
-                                        <td style="width: 8%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
-                                        <td style="width: 18%;">{{$cars->find($order->car_id)->nama}}</td>
-                                        <td style="width: 22%;">Rp. {{$order->harga}}</td>
-                                        <td style="width: 16%;">{{$order->peminjaman}}</td>
-                                        <td style="width: 16%;">{{$order->pengembalian}}</td>
+                                        <td style="width: 4%"><input name="id" style="text-align: center" value="{{$order->id}}" readonly></td>
+                                        <td style="">{{\App\Models\User::find($order->user_id)->nama}}</td>
+                                        <td style="">{{\App\Models\User::find($order->user_id)->telepon}}</td>
+                                        <td style="width: 10%;">{{$cars->find($order->car_id)->nama}}</td>
+                                        <td style="width: 10%;">Rp. {{$order->harga}}</td>
+                                        <td style="width: 12%;">{{$order->peminjaman}}</td>
+                                        <td style="width: 12%;">{{$order->pengembalian}}</td>
                                         <td style="width: 20%;">
                                             <a href="{{$order->foto_bukti}}" target="_blank" style="text-decoration: none;"><span class="sec-button">Lihat Foto</span></a>
                                         </td>
