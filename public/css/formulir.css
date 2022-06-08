@@ -44,3 +44,12 @@ form{
 h2{
     margin-top: 10vh; font-size:30px; color:#7969E8; margin-bottom: 5vh;
 }
+
+@media only screen and (max-width: 600px) {
+    /* .nav{
+        width: 125% !important;
+    } */
+    .inputM{
+        width: 32vw ;
+    }
+}
