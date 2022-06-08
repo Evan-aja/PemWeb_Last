@@ -2,21 +2,34 @@ table, th{
     border: 2px solid #7969E8;
     border-collapse: collapse;
     padding: 5px 10px;
-    text-align: center;
+    text-align: center !important;
+
 }
 
 td {
     border-right: 2px solid #8B7FDF;
     padding-top: 10px;
     padding-bottom: 10px;
+    text-align: center !important;
 }
 
 table{
     width: 70%;
 }
 
-.padding{
-    
+.lihat_foto{
+    /* width: 100% !important; */
+    /* background-color: black !important; */
+    display: inline-block !important;
+}
+
+.batal{
+    width: 100%;
+    /* margin-top: -10px !important; */
+}
+
+.konfirmasi{
+    width: 100%;    
 }
 
 *{
